@@ -1,0 +1,5 @@
+config/config.yaml
+scripts/
+
+# Ignore __pycache__ files created by VS Code.
+*__pycache__* 

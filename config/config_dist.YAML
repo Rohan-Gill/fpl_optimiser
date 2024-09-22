@@ -1,0 +1,10 @@
+---
+season: "2024/2025"  # Current football season
+
+fpl_api_base_url: "https://fantasy.premierleague.com/api"  # Base URL for FPL API
+
+FPL_TEAM_ID: 1234567  # FPL team ID
+
+# Authentication cookie for accessing the FPL API.
+fpl_api_cookie_auth: |-
+  "Your authentication cookie"
