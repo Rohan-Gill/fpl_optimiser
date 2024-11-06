@@ -16,8 +16,8 @@ class FplAPIData:
         self.season_label = "_".join([year[-2:] for year in self.config.season.split("/")])
         self.player_gw_data_df = None
         self.team_used_gw_df = None
-        self.directory = os.path.join(DATA_DIR, "fpl_official_api")
-    
+        self.directory = os.path.join(DATA_DIR, "official_api_data")
+        self.auth_cookie = {"Cookie": self.config.fpl_api_cookie_auth}
     def get_gw_team_lineup_data(self, gameweek: int, save_to_disk: bool = True) -> pd.DataFrame:
         """
         Generates a pd.DataFrame object that represents the team used in the specified (historic) gameweek. 
@@ -25,7 +25,7 @@ class FplAPIData:
 
         api_endpoint = f"{self.config.fpl_api_base_url}/entry/{self.config.FPL_TEAM_ID}/event/{gameweek}/picks"
         try:
-            response = requests.get(api_endpoint, cookies=self.config.fpl_api_cookie_auth, timeout=5)
+            response = requests.get(api_endpoint, cookies=self.auth_cookie)
             response.raise_for_status()
             gw_team_data = response.json()
         except requests.exceptions.RequestException as req_err:
@@ -73,7 +73,7 @@ class FplAPIData:
 
         # Retrieve (dict) data from API using requests and JSON
         try:
-            response = requests.get(api_endpoint, cookies=self.config.fpl_api_cookie_auth, timeout=5)
+            response = requests.get(api_endpoint, cookies=self.auth_cookie)
             response.raise_for_status()
             player_api_data = response.json()
         except requests.exceptions.RequestException as req_err:
@@ -169,8 +169,11 @@ class FplXPtsForecastData:
         df = df[["name", "position", "cost", "xmins"] + [f"ep_gw{i}" for i in range(gameweek, gameweek + 3)]]
         df["position"] = df["position"].map({"GK": "GKP", "DF": "DEF", "MD":"MID", "FW": "FWD"})
         df["cost"] = df["cost"].astype("float32")
-        df["xmins"] = df["xmins"].astype("int32")
+        df["xmins"] = df["xmins"].astype("int32").fillna(0)
         df["cost"] = np.where(df["cost"] == 99.9, 0, df["cost"])
+
+        for i in range(gameweek, gameweek + 3):
+            df[f"ep_gw{i}"] = df[f"ep_gw{i}"].fillna(0)
         
         # Data enrichment
         df["name"] = df["name"].replace(fpl_xPts_forecast_name_map)

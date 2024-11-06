@@ -9,7 +9,7 @@ class YAMLFile:
 
     def __init__(self, yaml_filepath: Optional[str] = None) -> None:
         if yaml_filepath is None:
-            yaml_filepath  = os.path.join(CONFIG_DIR, "config.YAML") 
+            yaml_filepath = os.path.join(CONFIG_DIR, "config.YAML") 
         
         yaml_file = self.open_yaml_file(yaml_filepath)
         for k, v in yaml_file.items():

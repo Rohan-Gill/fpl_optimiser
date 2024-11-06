@@ -1,1 +1,1 @@
-from .data import FplAPIData, FplReviewData
+from .data import FplAPIData, FplXPtsForecastData
