@@ -178,16 +178,7 @@ class FplXPtsForecastData:
         # Data enrichment
         df["name"] = df["name"].replace(fpl_xPts_forecast_name_map)
         df["name"] = df.apply(lambda row: fpl_xPts_forecast_name_pos_map.get((row["name"], row["position"]), row["name"]), axis=1)
-        df["name"] = df.apply(lambda row: fpl_xPts_forecast_name_cost_map.get((row["name"], row["cost"]), row["name"]), axis=1)
        
-        if gameweek == 2:
-            df["position"] = np.where((df["name"] == "Jota Silva") & (df["xmins"] == 24), "MID", df["position"])
-            df["cost"] = np.where((df["name"] == "Jota Silva") & (df["xmins"] == 24), 6.0, df["cost"])
-            df = df[~((df["name"] == "Jota Silva") & (df["xmins"] == 0))]
-
-            df["cost"] = np.where((df["name"] == "Evanilson") & (df["xmins"] == 70), 6.0, df["cost"])
-            df = df[~((df["name"] == "Evanilson") & (df["xmins"] == 0))]
-
         if save_to_disk:
             filename = f"FPL {self.season_label} season - xPts forecast GW{gameweek} data.csv"
             df.to_csv(os.path.join(self.directory, "clean", filename) ,index=False)

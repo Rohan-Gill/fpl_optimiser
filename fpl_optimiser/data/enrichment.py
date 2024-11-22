@@ -141,11 +141,7 @@ fpl_xPts_forecast_name_pos_map = {
     ("Armstrong", "FWD"): "A. Armstrong",
     ("Armstrong", "MID"): "H. Armstrong",
     ("Young", "DEF"): "A. Young",
-    ("Young", "MID"): "K. Young"
-}
-
-# FPL xPts forecast - dictionary mapping names and costs to names.
-fpl_xPts_forecast_name_cost_map = {
-    ("Lewis", 4.7): "R. Lewis",
-    ("Lewis", 4.0): "J. Lewis"
+    ("Young", "MID"): "K. Young",
+    ("Davies", "DEF"): "B. Davies",
+    ("Davies", "GKP"): "H. Davies"
 }

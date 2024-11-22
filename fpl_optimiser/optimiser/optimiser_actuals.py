@@ -6,7 +6,7 @@ import os
 
 from ..utils import DATA_DIR
 
-class MILPOptimiser:
+class MILPActualsOptimiser:
     """
     """
 
@@ -27,11 +27,7 @@ class MILPOptimiser:
                  start_gameweek: int,
                  gameweeks: int = 3,
                  bench_weight: float = 0.5,
-                 gkp_bench_weight: float = 0.1,
-                 time_decay: float = 1.0,
-                 max_price_change: float = 0.3,
-                 k: float = 0.3,
-                 use_price_model: bool = True,
+                 gkp_bench_weight: float = 0.1,                
                  validation: bool = True,
                  use_existing_team: bool = False) -> None:
         
@@ -43,15 +39,9 @@ class MILPOptimiser:
         self.gameweeks = gameweeks
         self.bench_weight = bench_weight
         self.gkp_bench_weight = gkp_bench_weight
-        self.time_decay = time_decay
-        self.max_price_change = max_price_change
-        self.k = k
-        self.use_price_model = use_price_model
         self.validation = validation
         self.use_existing_team = use_existing_team
-        self.position_groups = {pos: set(player_data_df[player_data_df["position"] == pos].index) for pos in self.POSITIONS}
-        self.team_groups = {team: set(player_data_df[player_data_df["team"] == team].index) for team in self.TEAMS}
-
+        
         if use_existing_team:
             if start_gameweek ==  1:
                 raise RuntimeError("Error: Cannot have an existing team prior to GW1")
@@ -74,46 +64,20 @@ class MILPOptimiser:
             # Different start and end points for temporal constraints.
             self.start_t, self.end_t = start_gameweek, start_gameweek + gameweeks
         
-        self.pts_by_gw = {t: dict(zip(self.indices, list(np.array(self.player_data_df[f"ep_gw{t}"]) * (self.time_decay ** (t - 1))))) for t in range(self.start_gameweek, self.end_t)}  # Exp. pts by gameweek with time decay applied
-        self.baseline_pts_by_player = {idx: self.player_data_df.at[idx, f"ep_gw{start_gameweek}"] for idx in self.indices}  # Initial expected points (baseline for each player) - can use pts_by_gw (TBC)
-        self.mins_played = dict(zip(self.indices, list(self.player_data_df["xmins"])))
-
-        # Calculate and add estimated player costs to dataframe.
-        self.estimated_costs_by_gw = self.estimate_player_costs()
-        for t in range(self.start_gameweek, self.end_t):
-            self.player_data_df[f"ep_cost_gw{t}"] = self.estimated_costs_by_gw[t].values()
-
-    @staticmethod
-    def sigmoid(x, k=0.3, midpoint=0) -> float:
-        """ Sigmoid function used to model non-linear player price adjustments."""
-        return 1 / (1 + np.exp(-k * (x - midpoint)))
-    
-    def estimate_player_costs(self) -> dict:
-        """
-        Creates a dictionary of containing player index and estimated player cost key-value pairs for each gameweek.
-        Estimates player costs using a sigmoid function for price change.
-        """
-        estimated_costs_by_gw = {}
-        for t in range(self.start_gameweek, self.end_t):
-            estimated_costs_by_gw[t] = {}
-            for idx in self.indices:
-                if t == self.start_gameweek or not self.use_price_model:
-                    estimated_costs_by_gw[t][idx] = self.player_data_df.at[idx, "now_cost"]
-                else:
-                    score_diff = self.pts_by_gw[t][idx] - self.baseline_pts_by_player[idx]
-                    price_change = self.max_price_change * (2 * self.sigmoid(score_diff, k=self.k) - 1)
-                    estimated_costs_by_gw[t][idx] = round(estimated_costs_by_gw[t-1][idx] + price_change, 1)
-        
-        return estimated_costs_by_gw
+        self.position_groups = {pos: {t: set(player_data_df[player_data_df[f"position_gw{t}"] == pos].index) for t in range(self.start_gameweek, self.end_t)} for pos in self.POSITIONS}
+        self.team_groups = {team: {t: set(player_data_df[player_data_df[f"team_gw{t}"] == team].index) for t in range(self.start_gameweek, self.end_t)} for team in self.TEAMS}
+        self.pts_by_gw = {t: dict(zip(self.indices, list(np.array(self.player_data_df[f"ep_gw{t}"])))) for t in range(self.start_gameweek, self.end_t)}
+        self.mins_played = {t: dict(zip(self.indices, list(self.player_data_df[f"xmins_gw{t}"]))) for t in range(self.start_gameweek, self.end_t)}
+        self.estimated_costs_by_gw = {t: dict(zip(self.indices, list(self.player_data_df[f"ep_cost_gw{t}"]))) for t in range(self.start_gameweek, self.end_t)}
 
     def objective_function(self) -> pulp.LpAffineExpression:
         """
         Defines the objective function to be used within the optimisation algorithm and returns a pulp.LpAffineExpression object.
         """
-        # Objective function: Sum of expected points across all gameweeks with time decay (decay incorporated within pts_by_gw).
+        # Objective function: Sum of expected points across all gameweeks.
         return pulp.lpSum([
             (self.pts_by_gw[t][idx] * self.x_captain[idx][t]) +  # Captain's points
-            (self.pts_by_gw[t][idx] * (self.x_outfield[idx][t] + (self.gkp_bench_weight if self.player_data_df.at[idx, "position"] == "GKP" else self.bench_weight) * self.x_bench[idx][t])) +
+            (self.pts_by_gw[t][idx] * (self.x_outfield[idx][t] + (self.gkp_bench_weight if self.player_data_df.at[idx, f"position_gw{t}"] == "GKP" else self.bench_weight) * self.x_bench[idx][t])) +
             (self.pts_by_gw[t][idx] * 0.1 * self.x_vice_captain[idx][t])  # Vice-captain's points
             for idx in self.indices for t in range(self.start_gameweek, self.end_t)
         ])
@@ -157,12 +121,15 @@ class MILPOptimiser:
         # Base constraints
         for t in range(self.start_gameweek, self.end_t):
             self.prob += pulp.lpSum([self.estimated_costs_by_gw[t][idx] * (self.x_outfield[idx][t] + self.x_bench[idx][t]) for idx in self.indices]) <= 100.0, f"BudgetConstraint_GW{t}"            
-            self.prob += pulp.lpSum([self.mins_played[idx] * (self.x_outfield[idx][t] + self.x_bench[idx][t]) for idx in self.indices]) >= 15 * 70.0, f"ProbabilityOfStartingConstraint_GW{t}"
+            
+            # Update starting constraint to reflect min_played over multiple gameweeks 
+            #self.prob += pulp.lpSum([self.mins_played[t][idx] * (self.x_outfield[idx][t] + self.x_bench[idx][t]) for idx in self.indices]) >= 15 * 70.0, f"ProbabilityOfStartingConstraint_GW{t}"
             self.prob += pulp.lpSum([self.x_outfield[idx][t] for idx in self.indices]) == 11, f"OutfieldPlayersConstraint_GW{t}"
             self.prob += pulp.lpSum([self.x_bench[idx][t] for idx in self.indices]) == 4, f"BenchPlayersConstraint_GW{t}"
 
+            # Update team constraints in-line with team_groups change
             for team in self.TEAMS:
-                self.prob += pulp.lpSum([self.x_outfield[idx][t] + self.x_bench[idx][t] for idx in self.team_groups[team]]) <= 3, f"{team}TeamConstraint_GW{t}"
+                self.prob += pulp.lpSum([self.x_outfield[idx][t] + self.x_bench[idx][t] for idx in self.team_groups[team][t]]) <= 3, f"{team}TeamConstraint_GW{t}"
             
             for idx in self.indices:
                 self.prob += pulp.lpSum([self.x_outfield[idx][t] + self.x_bench[idx][t]]) <= 1, f"SingleSelectionConstraint_GW{t}_{idx}"
@@ -174,19 +141,20 @@ class MILPOptimiser:
             self.prob += pulp.lpSum([self.x_vice_captain[idx][t] for idx in self.indices]) == 1, f"OneViceCaptain_GW{t}"    
 
             self.prob += pulp.lpSum([self.formation_vars[idx][t] for idx in self.FORMATIONS_DICT]) == 1, f"OneFormation_GW{t}"
+            
+            # Update position constraints in-line with position_groups change
             for form_idx, formation in self.FORMATIONS_DICT.items():
                 num_def, num_mid, num_fwd = formation
-                self.prob += pulp.lpSum([self.x_outfield[idx][t] for idx in self.position_groups["DEF"]]) >= num_def * self.formation_vars[form_idx][t], f"DefendersFormationOutfield_GW{t}_{form_idx}"
-                self.prob += pulp.lpSum([self.x_outfield[idx][t] for idx in self.position_groups["MID"]]) >= num_mid * self.formation_vars[form_idx][t], f"MidfieldersFormationOutfield_GW{t}_{form_idx}"
-                self.prob += pulp.lpSum([self.x_outfield[idx][t] for idx in self.position_groups["FWD"]]) >= num_fwd * self.formation_vars[form_idx][t], f"ForwardsFormationOutfield_GW{t}_{form_idx}"
+                self.prob += pulp.lpSum([self.x_outfield[idx][t] for idx in self.position_groups["DEF"][t]]) >= num_def * self.formation_vars[form_idx][t], f"DefendersFormationOutfield_GW{t}_{form_idx}"
+                self.prob += pulp.lpSum([self.x_outfield[idx][t] for idx in self.position_groups["MID"][t]]) >= num_mid * self.formation_vars[form_idx][t], f"MidfieldersFormationOutfield_GW{t}_{form_idx}"
+                self.prob += pulp.lpSum([self.x_outfield[idx][t] for idx in self.position_groups["FWD"][t]]) >= num_fwd * self.formation_vars[form_idx][t], f"ForwardsFormationOutfield_GW{t}_{form_idx}"
             
-            self.prob += pulp.lpSum([self.x_outfield[idx][t] for idx in self.position_groups["GKP"]]) == 1, f"GoalkeeperFormationOutfield_GW{t}"
-            self.prob += pulp.lpSum([self.x_bench[idx][t] for idx in self.position_groups["GKP"]]) == 1, f"GoalkeeperFormationBench_GW{t}"
-            self.prob += pulp.lpSum([self.x_outfield[idx][t] + self.x_bench[idx][t] for idx in self.position_groups["DEF"]]) == 5, f"DefendersLineupHardConstraint_GW{t}"
-            self.prob += pulp.lpSum([self.x_outfield[idx][t] + self.x_bench[idx][t] for idx in self.position_groups["MID"]]) == 5, f"MidfieldersLineupHardConstraint_GW{t}"
-            self.prob += pulp.lpSum([self.x_outfield[idx][t] + self.x_bench[idx][t] for idx in self.position_groups["FWD"]]) == 3, f"ForwardsLineupHardConstraint_GW{t}"   
-
-            self.prob += pulp.lpSum([self.estimated_costs_by_gw[t][idx] * self.x_bench[idx][t] for idx in self.position_groups["GKP"]]) <= 4.0, f"BenchGK_Cost4M_GW{t}"
+            self.prob += pulp.lpSum([self.x_outfield[idx][t] for idx in self.position_groups["GKP"][t]]) == 1, f"GoalkeeperFormationOutfield_GW{t}"
+            self.prob += pulp.lpSum([self.x_bench[idx][t] for idx in self.position_groups["GKP"][t]]) == 1, f"GoalkeeperFormationBench_GW{t}"
+            self.prob += pulp.lpSum([self.x_outfield[idx][t] + self.x_bench[idx][t] for idx in self.position_groups["DEF"][t]]) == 5, f"DefendersLineupHardConstraint_GW{t}"
+            self.prob += pulp.lpSum([self.x_outfield[idx][t] + self.x_bench[idx][t] for idx in self.position_groups["MID"][t]]) == 5, f"MidfieldersLineupHardConstraint_GW{t}"
+            self.prob += pulp.lpSum([self.x_outfield[idx][t] + self.x_bench[idx][t] for idx in self.position_groups["FWD"][t]]) == 3, f"ForwardsLineupHardConstraint_GW{t}"   
+            self.prob += pulp.lpSum([self.estimated_costs_by_gw[t][idx] * self.x_bench[idx][t] for idx in self.position_groups["GKP"][t]]) <= 4.0, f"BenchGK_CostLT4M_GW{t}"
 
         # Transfer constraints: At most one transfer in and out per gameweek
         for t in range(self.start_t + 1, self.end_t):
@@ -220,7 +188,7 @@ class MILPOptimiser:
             solution_df["vice_captain"] = solution_df.index.isin(vice_captain_indices)
 
             # Define sorting variables
-            solution_df["pos_rank"] = solution_df["position"].map(dict(zip(self.POSITIONS, range(0, len(self.POSITIONS)))))
+            solution_df["pos_rank"] = solution_df[f"position_gw{t}"].map(dict(zip(self.POSITIONS, range(0, len(self.POSITIONS)))))
             solution_df["pos_type_rank"] = solution_df["position_type"].map({"Outfield": 0 , "Bench": 1})
             solution_df.sort_values(by=["pos_type_rank", "pos_rank"], ascending=True, inplace=True)
             solution_df.drop(columns=["pos_rank", "pos_type_rank"], inplace=True)
@@ -231,10 +199,12 @@ class MILPOptimiser:
                 solution_df[f"ep_cost_gw{self.start_t}"] = solution_df[f"ep_cost_gw{self.start_t + 1}"]
                 solution_df[f"ep_gw{self.start_t}"] = solution_df[f"ep_gw{self.start_t + 1}"]
             
-            solution_df = solution_df[["id", "name", "position", "team", "prob_injury", "starts", "starts_perc",
-                                       "selected_by_percent", "xmins", f"ep_cost_gw{t}", "gameweek",
+            solution_df = solution_df[["id", "name", f"position_gw{t}", f"team_gw{t}", f"prob_injury_gw{t}",
+                                       f"xmins_gw{t}", f"ep_cost_gw{t}", "gameweek",
                                        f"ep_gw{t}", "position_type", "captain", "vice_captain"]]
-            solution_df.rename(columns={f"ep_gw{t}":"xPts", f"ep_cost_gw{t}": "player_cost", "xmins":"xMins"}, inplace=True)
+            solution_df.rename(columns={f"position_gw{t}": "position", f"team_gw{t}": "team", 
+                                       f"prob_injury_gw{t}": "prob_injury", f"ep_gw{t}":"xPts",
+                                       f"ep_cost_gw{t}": "player_cost", f"xmins_gw{t}":"xMins"}, inplace=True)
             results_df = pd.concat([results_df, solution_df], axis=0)
 
             # Do not print validation report for first period if the solver is run with an existing team.
@@ -287,7 +257,7 @@ class MILPOptimiser:
 
         # Solve the LP problem.
         self.prob.solve(pulp.PULP_CBC_CMD(msg=False))
-       
+        
         # Extract results.
         self.extract_results()
         print("Optimisation process complete!")
