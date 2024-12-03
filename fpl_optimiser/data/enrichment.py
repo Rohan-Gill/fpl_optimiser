@@ -41,7 +41,9 @@ fpl_api_id_name_map = {
     484: "B. Davies", 
     669: "H. Davies",
     266: "H.Clarke",
-    499: "P.M.Sarr"
+    499: "P.M.Sarr", 
+    682: "T. Edozie", 
+    459: "S. Edozie"
 }
 
 # FPL xPts forecast - dictionary mapping names.

@@ -26,6 +26,8 @@ class MILPOptimiser:
                  player_data_df: pd.DataFrame, 
                  start_gameweek: int,
                  gameweeks: int = 3,
+                 t0_team_value: float = 100.0,
+                 excess_budget: float = 0.0,
                  bench_weight: float = 0.5,
                  gkp_bench_weight: float = 0.1,
                  time_decay: float = 1.0,
@@ -41,6 +43,8 @@ class MILPOptimiser:
         self.indices = player_data_df.index
         self.start_gameweek = start_gameweek
         self.gameweeks = gameweeks
+        self.t0_team_value = t0_team_value
+        self.excess_budget = excess_budget
         self.bench_weight = bench_weight
         self.gkp_bench_weight = gkp_bench_weight
         self.time_decay = time_decay
@@ -51,6 +55,9 @@ class MILPOptimiser:
         self.use_existing_team = use_existing_team
         self.position_groups = {pos: set(player_data_df[player_data_df["position"] == pos].index) for pos in self.POSITIONS}
         self.team_groups = {team: set(player_data_df[player_data_df["team"] == team].index) for team in self.TEAMS}
+
+        if start_gameweek == 1 and (self.t0_team_value > 100.0 or self.t0_team_value + self.excess_budget > 100.0):
+            raise RuntimeError("Error: Total funds cannot be great than £100mn in GW1!")
 
         if use_existing_team:
             if start_gameweek ==  1:
@@ -156,7 +163,7 @@ class MILPOptimiser:
 
         # Base constraints
         for t in range(self.start_gameweek, self.end_t):
-            self.prob += pulp.lpSum([self.estimated_costs_by_gw[t][idx] * (self.x_outfield[idx][t] + self.x_bench[idx][t]) for idx in self.indices]) <= 100.0, f"BudgetConstraint_GW{t}"            
+            self.prob += pulp.lpSum([self.estimated_costs_by_gw[t][idx] * (self.x_outfield[idx][t] + self.x_bench[idx][t]) for idx in self.indices]) <= self.t0_team_value + self.excess_budget, f"BudgetConstraint_GW{t}"            
             self.prob += pulp.lpSum([self.mins_played[idx] * (self.x_outfield[idx][t] + self.x_bench[idx][t]) for idx in self.indices]) >= 15 * 70.0, f"ProbabilityOfStartingConstraint_GW{t}"
             self.prob += pulp.lpSum([self.x_outfield[idx][t] for idx in self.indices]) == 11, f"OutfieldPlayersConstraint_GW{t}"
             self.prob += pulp.lpSum([self.x_bench[idx][t] for idx in self.indices]) == 4, f"BenchPlayersConstraint_GW{t}"
@@ -186,7 +193,7 @@ class MILPOptimiser:
             self.prob += pulp.lpSum([self.x_outfield[idx][t] + self.x_bench[idx][t] for idx in self.position_groups["MID"]]) == 5, f"MidfieldersLineupHardConstraint_GW{t}"
             self.prob += pulp.lpSum([self.x_outfield[idx][t] + self.x_bench[idx][t] for idx in self.position_groups["FWD"]]) == 3, f"ForwardsLineupHardConstraint_GW{t}"   
 
-            self.prob += pulp.lpSum([self.estimated_costs_by_gw[t][idx] * self.x_bench[idx][t] for idx in self.position_groups["GKP"]]) <= 4.0, f"BenchGK_Cost4M_GW{t}"
+            #self.prob += pulp.lpSum([self.estimated_costs_by_gw[t][idx] * self.x_bench[idx][t] for idx in self.position_groups["GKP"]]) <= 4.0, f"BenchGK_Cost4M_GW{t}"
 
         # Transfer constraints: At most one transfer in and out per gameweek
         for t in range(self.start_t + 1, self.end_t):
