@@ -104,7 +104,8 @@ fpl_xPts_forecast_name_map = {
     "G�ndogan": "Gündogan",
     "Kabor�": "Kaboré",
     "Andr�": "André",
-    "F.Kad?o?lu": "F.Kadıoğlu"
+    "F.Kad?o?lu": "F.Kadıoğlu", 
+    "G�mez": "Gómez"
 }
 
 

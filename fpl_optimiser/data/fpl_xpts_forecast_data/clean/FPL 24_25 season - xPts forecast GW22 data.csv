@@ -1,0 +1,735 @@
+name,position,cost,xmins,ep_gw22,ep_gw23,ep_gw24
+M.Salah,MID,13.7,91,6.9,8.9,12.6
+Alexander-Arnold,DEF,7.2,82,4.2,5.6,8.1
+Isak,FWD,9.4,89,6.1,5.9,5.6
+Palmer,MID,11.4,75,5.5,4.6,7.1
+Ødegaard,MID,8.3,89,6.2,5.7,4.9
+Luis Díaz,MID,7.5,66,3.1,5.5,7.4
+Haaland,FWD,14.8,82,6.2,5.7,4.0
+A.Becker,GKP,5.4,94,3.8,4.3,7.1
+Gordon,MID,7.7,89,5.1,5.2,4.9
+Gakpo,FWD,7.4,65,3.8,4.5,6.8
+B.Fernandes,MID,8.4,90,5.3,4.5,5.1
+Son,MID,9.8,85,4.7,5.7,4.5
+C. Wood,FWD,7.0,78,5.7,4.2,4.9
+Virgil,DEF,6.4,89,3.5,4.6,6.7
+Mbeumo,MID,7.8,88,4.3,4.7,5.4
+Martinelli,MID,6.7,79,5.1,5.1,4.1
+Robertson,DEF,5.9,68,3.3,4.5,6.6
+Havertz,FWD,7.8,85,5.0,4.7,4.3
+Mac Allister,MID,6.2,80,3.2,4.2,6.5
+Konaté,DEF,5.1,91,3.4,4.4,6.1
+Eze,MID,6.7,86,4.7,4.9,4.1
+Solanke,FWD,7.5,84,4.2,5.3,4.1
+Trossard,MID,6.8,71,4.7,4.9,4.0
+Diogo J.,MID,7.2,37,2.1,4.3,7.1
+Foden,MID,9.2,76,5.2,4.8,3.4
+N.Jackson,FWD,8.0,82,5.4,3.2,4.6
+Pickford,GKP,5.0,92,3.3,3.1,6.6
+Gibbs-White,MID,6.4,79,5.2,3.5,4.2
+Ndiaye,FWD,5.4,87,3.6,2.9,6.3
+Calvert-Lewin,FWD,5.4,58,3.4,3.1,6.1
+Watkins,FWD,8.9,77,3.3,5.0,4.3
+Amad,MID,5.5,86,4.5,3.7,4.3
+Mateta,FWD,7.3,79,4.3,4.4,3.6
+J.Murphy,MID,5.1,77,4.1,4.2,3.8
+Gravenberch,MID,5.0,86,3.0,3.3,5.8
+João Pedro,FWD,5.6,74,3.7,4.6,3.6
+Szoboszlai,MID,6.3,53,2.9,3.5,5.6
+De Bruyne,MID,9.4,71,4.9,3.9,3.0
+Hudson-Odoi,MID,5.2,82,4.8,3.2,3.7
+Raya,GKP,5.6,95,4.0,3.9,3.5
+Semenyo,MID,5.6,89,3.6,4.3,3.4
+A.Doucoure,MID,5.1,85,3.1,2.6,5.6
+Gabriel,DEF,6.4,91,4.1,4.0,3.2
+Raúl,FWD,5.7,73,4.3,3.9,3.0
+Rogers,MID,5.5,87,3.0,4.2,3.8
+Vardy,FWD,5.5,82,4.2,3.3,3.6
+Kluivert,MID,5.5,82,3.7,4.2,3.1
+Kulusevski,MID,6.4,87,3.6,4.0,3.2
+Pedro Porro,DEF,5.4,89,3.6,4.6,2.8
+Sels,GKP,5.0,95,4.0,3.3,3.4
+Mitoma,MID,6.3,77,3.3,4.1,3.3
+Hall,DEF,5.0,86,3.5,3.7,3.5
+Iwobi,MID,5.9,86,4.0,3.7,2.9
+Kudus,MID,6.2,83,4.3,3.2,3.1
+L.Paquetá,MID,5.7,76,4.2,3.3,3.1
+Saliba,DEF,6.3,90,3.8,3.8,2.9
+Sánchez,GKP,4.8,91,3.8,3.1,3.7
+Sancho,MID,6.2,73,4.2,2.7,3.5
+Wissa,FWD,6.2,73,3.1,3.4,3.9
+I.Sarr,MID,5.9,74,2.7,4.2,3.4
+J.Timber,DEF,5.7,85,3.9,3.5,2.8
+Kinsky,GKP,4.5,92,3.4,3.8,3.1
+E. Martinez,GKP,5.0,93,3.1,3.6,3.6
+Andre Onana,GKP,5.1,93,3.5,3.3,3.5
+Bernardo,MID,6.3,87,4.0,3.5,2.7
+Joelinton,MID,6.0,87,3.4,3.5,3.3
+Leno,GKP,5.0,93,3.6,3.5,3.1
+Aina,DEF,5.3,92,4.5,2.5,3.2
+Cunha,FWD,7.0,84,2.6,3.4,4.0
+Elanga,MID,5.3,59,3.9,2.9,3.4
+Henderson,GKP,4.5,94,3.4,3.4,3.2
+Verbruggen,GKP,4.5,94,3.3,3.6,3.2
+Bruno G.,MID,6.1,90,3.3,3.5,3.1
+Delap,FWD,5.6,73,3.1,2.6,4.2
+Harrison,MID,5.2,59,2.9,2.4,4.6
+Mykolenko,DEF,4.3,88,2.8,2.1,5.0
+O.Dango,MID,5.0,75,3.2,3.6,3.1
+Arrizabalaga,GKP,4.5,92,3.2,3.5,3.1
+Gvardiol,DEF,6.0,94,4.6,3.1,2.0
+N.Williams,DEF,4.3,85,4.4,2.4,3.0
+Flekken,GKP,4.4,92,3.1,3.3,3.2
+Tielemans,MID,5.5,82,2.7,3.6,3.2
+A. Young,DEF,4.7,78,2.7,2.1,4.8
+Fabianski,GKP,4.1,93,3.4,3.1,2.9
+Jones,MID,5.3,48,2.3,2.8,4.4
+Ramsdale,GKP,4.4,94,3.1,3.0,3.3
+Walton,GKP,4.3,91,3.0,3.1,3.5
+Mavididi,MID,5.1,73,3.5,2.8,3.1
+Sterling,MID,6.7,45,3.0,3.5,3.0
+Strand Larsen,FWD,5.4,83,3.1,2.8,3.4
+H. Wilson,MID,5.2,67,3.7,3.1,2.5
+José Sá,GKP,4.3,93,3.1,3.0,3.2
+Estupiñan,DEF,5.0,88,2.8,4.0,2.4
+Milenković,DEF,4.8,92,4.2,2.1,2.9
+Rice,MID,6.2,83,3.4,3.2,2.7
+Tarkowski,DEF,4.8,92,2.6,1.9,4.7
+Cucurella,DEF,5.2,90,4.0,1.8,3.3
+Hutchinson,MID,5.2,88,2.9,2.4,3.7
+Madueke,MID,6.1,61,3.9,2.1,3.1
+Muñoz,DEF,4.8,88,2.9,3.5,2.6
+Branthwaite,DEF,4.8,88,2.4,1.9,4.6
+Dalot,DEF,5.0,85,3.1,2.6,3.2
+Murillo,DEF,4.6,87,4.0,2.2,2.7
+Højlund,FWD,6.9,40,2.4,3.1,3.5
+Enzo,MID,5.0,71,2.8,2.6,3.4
+P. Neto,MID,6.2,58,3.6,2.2,3.0
+Beto,FWD,4.9,40,2.3,2.0,4.4
+R. Lewis,DEF,4.6,88,4.1,3.0,1.6
+Livramento,DEF,4.5,68,2.8,3.2,2.7
+Schär,DEF,5.4,57,1.7,3.7,3.2
+Smith Rowe,MID,5.2,64,3.1,3.2,2.3
+Dunk,DEF,4.3,89,2.5,3.6,2.4
+Savinho,MID,6.5,56,3.4,2.7,2.2
+Tonali,MID,5.5,78,2.9,2.9,2.6
+Castagne,DEF,4.2,89,3.3,3.0,2.0
+Darwin,FWD,7.0,38,2.4,2.5,3.4
+Welbeck,FWD,5.5,50,2.5,3.3,2.5
+Anderson,MID,5.0,75,3.2,2.4,2.6
+Gana,MID,4.8,72,2.2,2.0,4.0
+Mangala,MID,5.0,64,2.2,1.9,4.1
+Robinson,DEF,5.1,91,3.3,2.9,2.0
+Akanji,DEF,5.3,84,3.7,2.8,1.7
+Cash,DEF,4.4,83,1.6,3.5,3.0
+Digne,DEF,4.6,70,1.6,3.4,3.2
+El Khannouss,MID,4.8,71,2.8,2.7,2.6
+Mitchell,DEF,4.8,86,2.7,3.1,2.4
+Guéhi,DEF,4.5,90,2.6,3.1,2.3
+Brennan Johnson,MID,6.4,37,1.5,3.6,2.9
+Mazraoui,DEF,4.4,74,2.9,2.2,2.8
+Souček,MID,4.9,86,3.1,2.6,2.3
+Andreas,MID,5.0,58,3.0,2.7,2.3
+C.Soler,MID,5.0,65,3.2,2.4,2.3
+Ederson M.,GKP,5.3,53,2.2,3.1,2.6
+Lacroix,DEF,4.5,91,2.6,3.0,2.2
+Lewis-Potter,MID,5.0,84,2.6,2.6,2.7
+Malen,MID,5.5,40,1.9,2.9,3.1
+Ramsey,MID,5.4,69,2.4,3.0,2.5
+Aké,DEF,5.3,86,4.0,2.6,1.3
+De Ligt,DEF,4.9,82,2.9,2.2,2.7
+Garnacho,MID,6.0,49,2.8,2.5,2.6
+L. Martinez,DEF,4.4,85,2.8,2.3,2.7
+Colwill,DEF,4.6,75,2.7,1.7,3.3
+Van Hecke,DEF,4.5,91,2.3,3.2,2.2
+Hee Chan,MID,6.1,54,2.4,2.2,3.0
+Andersen,DEF,4.2,88,3.0,2.7,1.8
+Botman,DEF,4.4,58,2.1,2.8,2.6
+Christie,MID,4.9,84,2.6,2.8,2.1
+Konsa,DEF,4.4,88,1.4,3.3,2.7
+Dragusin,DEF,4.3,89,2.8,3.1,1.6
+Kerkez,DEF,4.8,91,2.2,3.2,1.9
+Mainoo,MID,5.2,67,2.4,2.3,2.6
+Nørgaard,MID,4.8,80,2.3,2.5,2.5
+C.Richards,DEF,4.4,82,2.3,2.9,2.0
+Caicedo,MID,4.9,85,2.8,2.2,2.3
+M.Fernandes,MID,5.0,85,2.4,2.3,2.6
+Bailey,MID,6.2,54,2.2,2.9,2.0
+Cook,MID,5.0,89,2.5,2.6,2.0
+Ings,FWD,5.0,52,2.9,2.7,1.5
+McNeil,MID,5.1,50,0.1,1.2,5.8
+Baleba,MID,5.0,79,2.3,2.5,2.2
+Burns,MID,4.8,67,2.4,2.0,2.7
+Jensen,MID,5.3,67,2.3,2.3,2.4
+Kovačić,MID,5.4,71,2.7,2.2,2.0
+Lindstrøm,MID,5.0,41,2.0,1.7,3.2
+Onuachu,FWD,4.9,49,2.3,2.5,2.3
+Winks,MID,4.4,84,2.5,2.2,2.3
+Yates,MID,4.9,72,2.8,2.1,2.1
+Bassey,DEF,4.5,90,2.8,2.5,1.6
+Damsgaard,MID,5.0,59,2.2,2.3,2.5
+Hughes,MID,4.9,80,2.4,2.4,2.1
+Huijsen,DEF,4.4,90,2.0,3.1,1.8
+Schade,MID,5.1,51,2.2,2.0,2.5
+Brooks,MID,4.9,67,2.7,2.3,1.8
+Lukić,MID,4.8,77,2.5,2.3,1.9
+Maddison,MID,7.5,52,2.8,2.0,1.9
+Morsy,MID,4.9,93,2.2,1.9,2.6
+Wan-Bissaka,DEF,4.6,88,3.0,2.1,1.6
+Zirkzee,FWD,6.5,62,3.4,1.6,1.7
+Collins,DEF,4.6,91,1.7,2.3,2.6
+Guedes,MID,5.3,55,2.3,2.0,2.2
+J.Gomes,MID,4.9,82,2.1,2.1,2.4
+James,DEF,4.8,49,2.9,1.5,2.3
+Kamara,MID,5.0,79,2.0,2.4,2.3
+Summerville,MID,5.6,54,1.5,2.5,2.7
+Davis,DEF,4.4,92,1.8,0.8,3.8
+Georginio,MID,5.1,44,2.2,2.4,1.9
+Spence,DEF,4.4,63,2.2,2.6,1.7
+Maguire,DEF,4.9,68,2.3,1.8,2.3
+Partey,MID,5.0,61,2.2,2.1,2.1
+Van den Berg,DEF,4.1,91,1.7,2.3,2.5
+Buonanotte,MID,4.8,51,2.3,2.0,2.0
+Dibling,MID,4.5,46,1.5,2.2,2.6
+Janelt,MID,4.9,68,2.0,2.1,2.2
+P.M.Sarr,MID,4.8,70,2.3,2.2,1.8
+Ugarte,MID,4.9,58,1.9,2.1,2.3
+Zabarnyi,DEF,4.4,93,1.9,2.7,1.7
+Dúbravka,GKP,4.3,93,3.6,2.0,0.6
+Justin,DEF,4.2,81,2.5,1.6,2.1
+Kilman,DEF,4.4,88,2.8,1.9,1.5
+Aït-Nouri,DEF,4.8,87,1.8,1.7,2.6
+Álvarez,MID,5.0,71,2.2,2.0,1.9
+J.Ayew,MID,5.2,46,2.2,1.9,2.0
+Kristiansen,DEF,4.5,90,2.4,1.7,2.0
+Richarlison,FWD,6.8,36,1.9,2.1,2.1
+Veltman,DEF,4.4,70,1.9,2.6,1.6
+Downes,MID,4.7,80,2.0,2.0,2.0
+Adingra,MID,5.2,51,2.4,2.1,1.5
+André,MID,5.0,74,2.0,1.9,2.0
+A. Armstrong,FWD,5.1,40,1.9,2.0,2.1
+Berge,MID,5.0,59,1.9,2.0,2.0
+Burn,DEF,4.4,68,2.4,1.8,1.6
+Walker-Peters,DEF,4.3,93,1.7,1.8,2.4
+Stolarczyk,GKP,4.0,92,3.3,1.7,0.7
+Ayari,MID,5.0,59,2.0,1.8,1.8
+Emerson,DEF,4.4,52,2.1,1.9,1.6
+Jaden,MID,5.3,44,1.8,1.5,2.3
+Mings,DEF,4.4,88,1.4,2.4,1.8
+Broadhead,MID,4.9,59,2.3,1.7,1.5
+Cajuste,MID,4.5,71,2.0,1.5,2.1
+Jebbison,FWD,4.5,56,2.4,1.9,1.2
+Merino,MID,6.0,35,1.8,2.0,1.8
+Nketiah,FWD,5.9,35,1.8,1.9,1.7
+Mavropanos,DEF,4.3,83,2.9,1.6,0.9
+Muniz,FWD,5.5,27,1.8,2.1,1.5
+Aribo,MID,4.9,56,1.9,1.7,1.7
+B.Soumaré,MID,4.4,77,1.9,1.8,1.6
+Gusto,DEF,4.9,46,2.3,1.1,2.0
+Kamada,MID,5.1,44,2.0,1.8,1.4
+Vestergaard,DEF,4.0,78,2.1,1.4,1.8
+Archer,FWD,5.0,40,1.8,1.5,1.8
+N.Semedo,DEF,4.5,84,1.5,1.4,2.3
+O'Shea,DEF,4.0,89,1.4,0.6,3.2
+Adama,MID,4.7,29,1.7,2.0,1.4
+Bergvall,MID,4.4,68,2.1,1.6,1.4
+Harwood-Bellis,DEF,4.1,90,1.4,1.6,2.1
+Kamaldeen,MID,5.0,44,1.8,1.6,1.8
+Sugawara,DEF,4.3,56,1.5,1.5,2.1
+Adams,MID,4.9,71,1.9,1.7,1.4
+Bednarek,DEF,4.0,89,1.4,1.5,2.1
+G.Rodríguez,MID,4.8,59,1.9,1.6,1.4
+Garner,MID,4.9,33,1.1,1.4,2.6
+Grealish,MID,6.4,35,2.1,1.7,1.2
+Nkunku,MID,5.8,26,2.1,1.0,2.0
+S.Bueno,DEF,4.3,90,1.5,1.4,2.1
+Tsimikas,DEF,4.6,37,1.8,1.2,2.0
+Bissouma,MID,4.9,54,1.3,2.0,1.4
+Trippier,DEF,5.6,31,1.6,1.8,1.5
+C.Doucouré,MID,4.9,59,2.0,1.7,1.0
+Calafiori,DEF,5.8,24,0.6,2.1,2.0
+Doku,MID,6.2,29,1.9,1.6,1.2
+Duran,FWD,5.8,26,1.4,1.7,1.6
+Gündogan,MID,6.4,33,1.7,1.6,1.3
+Jota Silva,MID,5.9,25,1.7,1.5,1.4
+Lewis-Skelly,MID,4.5,66,2.1,1.4,1.1
+Amadou Onana,MID,4.8,46,1.5,1.6,1.6
+Pope,GKP,4.9,0,0.0,1.4,3.2
+Agbadou,DEF,4.0,89,1.5,1.3,1.7
+Bree,DEF,3.9,52,1.4,1.5,1.7
+Chalobah,DEF,4.4,25,1.1,1.1,2.3
+Matheus N.,MID,4.9,34,1.8,1.4,1.3
+O'Riley,MID,5.5,40,1.7,1.5,1.3
+Minteh,MID,5.0,27,1.4,1.8,1.2
+Tavernier,MID,5.4,0,0.0,1.8,2.5
+Willock,MID,4.7,21,1.1,1.6,1.6
+Acheampong,DEF,4.0,51,2.3,0.8,1.0
+Gray,MID,4.6,81,2.2,1.3,0.7
+B. Davies,DEF,4.3,45,1.2,1.9,1.0
+Tosin,DEF,4.2,50,2.2,0.9,1.0
+Bradley,DEF,4.7,18,0.9,1.0,2.1
+Chaplin,MID,5.1,95,0.2,1.0,2.8
+Daka,FWD,4.8,21,1.2,1.3,1.5
+R.Gomes,MID,5.2,35,1.4,1.3,1.3
+Thiago,FWD,5.9,24,1.1,1.5,1.4
+Doyle,MID,4.8,37,1.4,1.3,1.2
+Faes,DEF,4.0,62,1.6,0.9,1.3
+Hirst,FWD,5.4,22,1.2,1.0,1.7
+Almirón,MID,5.4,15,0.9,1.4,1.5
+Antony,MID,5.7,27,1.5,1.2,1.2
+Romero,DEF,4.9,0,0.0,1.7,2.1
+Coady,DEF,4.0,51,1.3,1.0,1.4
+Greaves,DEF,3.9,62,1.0,0.4,2.3
+Hermansen,GKP,4.5,0,0.0,1.1,2.6
+João Félix,MID,6.0,21,1.6,0.9,1.2
+McGinn,MID,5.2,0,0.0,1.2,2.5
+Ugochukwu,MID,4.4,37,1.2,1.2,1.3
+Coufal,DEF,4.2,39,1.6,1.0,1.1
+Van de Ven,DEF,4.5,0,0.0,1.6,2.0
+Dominguez,MID,4.8,28,1.5,1.0,1.1
+H.Clarke,DEF,4.0,63,1.1,0.5,1.7
+Mee,DEF,4.2,66,1.4,1.3,0.7
+Zinchenko,DEF,4.8,20,1.0,1.3,1.0
+Bellegarde,MID,4.9,23,1.0,1.0,1.2
+Hinshelwood,MID,4.9,34,0.7,1.3,1.3
+Maatsen,DEF,4.5,28,0.8,1.5,1.1
+Doherty,DEF,4.3,47,1.1,0.9,1.2
+L.Guilherme,MID,4.7,26,1.3,1.1,0.9
+Pinnock,DEF,4.4,0,0.0,0.9,2.3
+Skipp,MID,4.7,32,1.1,1.1,1.0
+Carvalho,MID,4.6,17,0.9,1.0,1.2
+Lamptey,DEF,4.4,20,0.8,1.2,1.0
+Ortega Moreno,GKP,5.2,40,1.7,0.5,0.7
+Roerslev,DEF,4.3,43,1.1,1.0,0.9
+Rúben,DEF,5.4,0,0.0,1.6,1.4
+Hill,DEF,3.9,56,0.4,1.4,1.0
+McAteer,MID,4.7,18,1.0,1.0,0.9
+Morato,DEF,4.5,23,1.1,0.8,1.0
+Enciso,MID,5.4,17,1.0,1.1,0.7
+Lavia,MID,4.5,28,0.9,0.9,1.0
+Patterson,DEF,4.4,24,0.9,0.7,1.2
+Phillips,MID,4.8,0,0.0,1.4,1.4
+Longstaff,MID,4.6,11,0.5,1.0,1.2
+Sarabia,MID,5.0,11,0.6,0.9,1.2
+Smith,DEF,4.4,0,0.0,1.2,1.5
+Stones,DEF,5.3,0,0.0,1.5,1.2
+Devenny,MID,4.5,30,1.3,0.8,0.4
+Henry,DEF,4.3,16,0.5,0.9,1.2
+Lerma,MID,4.8,0,0.0,0.9,1.6
+Yoro,DEF,4.3,24,0.9,0.8,0.9
+Cairney,MID,4.8,16,0.8,0.8,0.7
+Diego Carlos,DEF,4.5,17,0.1,1.0,1.4
+Ward-Prowse,MID,6.2,14,1.0,0.7,0.7
+Clyne,DEF,4.3,19,0.6,0.8,0.9
+Danilo,MID,4.7,21,1.1,0.6,0.6
+Jorginho,MID,4.7,15,0.6,0.9,0.8
+Manning,DEF,4.3,20,0.6,0.9,0.8
+March,MID,6.5,13,0.7,0.8,0.7
+Sosa,MID,5.5,14,1.1,0.6,0.6
+Toti,DEF,4.3,0,0.0,0.4,1.9
+N. Wood,DEF,4.0,42,0.8,0.8,0.8
+Awoniyi,FWD,5.5,6,0.6,1.0,0.7
+Bentancur,MID,4.9,0,0.0,0.9,1.3
+Chiesa,MID,6.8,6,0.6,0.7,0.9
+Godfrey,DEF,4.0,27,0.6,0.4,1.2
+Gomez,DEF,4.7,0,0.0,0.6,1.7
+Osula,FWD,4.9,4,0.4,1.1,0.7
+Sinisterra,MID,4.8,0,0.0,0.8,1.3
+Webster,DEF,4.3,20,0.7,0.7,0.8
+Gruda,MID,5.4,0,0.0,0.8,1.3
+Todibo,DEF,4.2,0,0.0,0.7,1.3
+Coleman,DEF,4.3,25,0.0,0.3,1.6
+J. O'Brien,DEF,4.5,13,0.4,0.5,1.1
+Elliott,MID,5.2,5,0.4,0.5,0.9
+Kelly,DEF,4.2,22,0.9,0.3,0.5
+Irving,MID,4.8,13,0.6,0.6,0.5
+Malacia,DEF,4.4,17,0.8,0.4,0.5
+Scott,MID,4.7,0,0.0,0.6,1.1
+Yarmoliuk,MID,4.4,10,0.5,0.5,0.7
+Bowen,MID,7.3,0,0.0,0.0,1.6
+J.Clarke,MID,5.4,10,0.5,0.5,0.6
+Ben Johnson,DEF,3.9,19,0.5,0.3,0.8
+Quansah,DEF,3.9,12,0.5,0.5,0.6
+Scarles,DEF,4.0,24,0.9,0.4,0.4
+J. Taylor,MID,4.8,21,0.8,0.3,0.5
+Wieffer,MID,4.7,25,0.1,0.5,1.1
+Winterburn,MID,4.5,20,0.8,0.5,0.3
+Eriksen,MID,5.3,6,0.4,0.6,0.5
+R. Fraser,MID,4.8,9,0.5,0.5,0.5
+Smallbone,MID,5.0,10,0.5,0.5,0.5
+C. Taylor,DEF,3.9,17,0.4,0.5,0.6
+Keane,DEF,3.9,12,0.4,0.3,0.7
+McAtee,MID,4.6,6,0.5,0.4,0.4
+Reed,MID,4.7,11,0.5,0.5,0.5
+Sessegnon,DEF,4.2,10,0.4,0.5,0.5
+Shaw,DEF,4.9,0,0.0,0.3,1.1
+Woolfenden,DEF,4.0,22,0.4,0.2,0.9
+Alex Moreno,DEF,4.3,9,0.5,0.3,0.5
+Buendia,MID,5.1,9,0.5,0.5,0.3
+Chadi Riad,DEF,4.3,8,0.2,0.5,0.6
+Coulibaly,DEF,4.0,13,0.4,0.4,0.5
+De Cordova-Reid,MID,5.2,8,0.5,0.4,0.4
+Endo,MID,4.6,6,0.3,0.3,0.7
+Sangaré,MID,4.3,0,0.0,0.4,0.9
+Moore,MID,4.5,11,0.6,0.4,0.3
+Schlupp,MID,4.6,5,0.3,0.5,0.4
+Al-Hamadi,FWD,4.8,4,0.3,0.3,0.4
+H. Armstrong,MID,4.5,9,0.4,0.4,0.4
+Choudhury,MID,4.3,6,0.3,0.4,0.4
+Collyer,MID,4.5,10,0.4,0.3,0.3
+Diop,DEF,4.4,8,0.3,0.5,0.4
+Ferguson,FWD,5.5,0,0.0,0.3,0.9
+Maghoma,MID,4.5,6,0.3,0.4,0.4
+Ndidi,MID,4.9,0,0.0,0.1,1.0
+Szmodics,MID,5.8,0,0.0,0.0,1.1
+Casemiro,MID,4.7,3,0.3,0.4,0.4
+Chukwuemeka,MID,4.8,12,0.7,0.1,0.1
+Forbs,MID,5.5,7,0.4,0.3,0.3
+Kiwior,DEF,4.8,10,0.4,0.4,0.3
+Tierney,DEF,4.3,5,0.3,0.4,0.3
+Cresswell,DEF,3.9,8,0.3,0.3,0.2
+Mudryk,MID,6.2,0,0.0,0.4,0.5
+Muric,GKP,4.4,5,0.2,0.4,0.4
+R. Nelson,MID,5.0,0,0.0,0.1,0.8
+Soler,DEF,4.0,6,0.3,0.3,0.2
+Vinicius,FWD,5.0,2,0.2,0.3,0.4
+Wharton,MID,4.7,0,0.0,0.0,0.9
+Wilson-Esbrand,DEF,4.0,7,0.4,0.4,0.1
+Bobb,MID,4.7,0,0.0,0.3,0.5
+Dawson,DEF,4.3,14,0.3,0.3,0.2
+Reguilón,DEF,4.2,9,0.4,0.3,0.1
+Stewart,FWD,4.4,0,0.0,0.3,0.5
+Iroegbunam,MID,4.3,0,0.0,0.0,0.7
+Mount,MID,6.3,0,0.0,0.0,0.7
+Nedeljkovic,DEF,3.9,5,0.1,0.3,0.2
+Stephens,DEF,4.0,0,0.0,0.0,0.7
+B. White,DEF,6.1,0,0.0,0.0,0.7
+Barkley,MID,5.2,0,0.0,0.0,0.6
+Burgess,DEF,3.9,10,0.2,0.1,0.4
+Forster,GKP,4.3,1,0.1,0.2,0.3
+Kelleher,GKP,4.1,0,0.0,0.1,0.5
+Kuol,MID,4.4,1,0.1,0.2,0.3
+Lallana,MID,5.0,2,0.1,0.2,0.2
+Renato Veiga,MID,4.4,7,0.3,0.1,0.2
+Simpson-Pusey,DEF,4.0,12,0.4,0.2,0.1
+Townsend,DEF,3.9,4,0.1,0.1,0.4
+Brereton Díaz,MID,4.9,2,0.2,0.2,0.1
+Dewsbury-Hall,MID,5.5,6,0.2,0.1,0.1
+Gómez,MID,5.5,4,0.2,0.1,0.1
+Hause,DEF,3.9,7,0.2,0.2,0.2
+Ji-soo,DEF,3.9,7,0.2,0.2,0.1
+Luongo,MID,4.4,6,0.3,0.1,0.1
+Marc Guiu,FWD,4.7,1,0.2,0.2,0.2
+Mario Jr.,MID,4.9,0,0.0,0.0,0.5
+Rashford,MID,6.6,0,0.0,0.0,0.5
+L. Thomas,DEF,3.9,3,0.1,0.1,0.2
+Tuanzebe,DEF,3.9,0,0.0,0.0,0.5
+Akinmboni,DEF,4.0,5,0.1,0.2,0.1
+Bogarde,DEF,4.0,4,0.1,0.2,0.1
+Boly,DEF,4.2,2,0.1,0.0,0.2
+Cundle,MID,4.5,1,0.1,0.2,0.1
+Disasi,DEF,4.2,2,0.1,0.1,0.2
+J.Cuenca,DEF,4.4,1,0.0,0.2,0.1
+Jørgensen,GKP,4.2,3,0.1,0.1,0.1
+Miley,MID,5.0,0,0.0,0.2,0.2
+Moder,MID,4.4,3,0.2,0.2,0.0
+Pedro Lima,DEF,3.9,1,0.0,0.2,0.2
+J. Ward,DEF,4.3,2,0.1,0.2,0.2
+Ajer,DEF,4.4,0,0.0,0.0,0.3
+Areola,GKP,4.2,0,0.0,0.1,0.2
+Benda,GKP,4.0,0,0.0,0.2,0.1
+Cornet,MID,4.7,0,0.0,0.1,0.1
+J.Virginia,GKP,3.9,1,0.1,0.1,0.1
+J. King,MID,4.5,0,0.0,0.2,0.1
+Kinsey,DEF,4.0,5,0.2,0.1,0.0
+Konak,MID,4.5,1,0.1,0.1,0.2
+Milner,MID,5.0,0,0.0,0.1,0.2
+Mubama,FWD,4.5,2,0.2,0.0,0.1
+Odysseas,GKP,4.3,1,0.1,0.2,0.0
+Okoli,DEF,4.0,2,0.1,0.1,0.2
+Orford,MID,4.5,2,0.2,0.1,0.0
+Toffolo,DEF,4.2,3,0.2,0.1,0.1
+Travers,GKP,4.4,2,0.1,0.1,0.1
+Alleyne,DEF,4.0,2,0.1,0.0,0.0
+Butler-Oyedeji,FWD,4.5,0,0.0,0.1,0.1
+Edouard,FWD,5.1,0,0.0,0.0,0.2
+Evans,DEF,4.4,0,0.0,0.1,0.1
+A. Harris,DEF,4.0,2,0.1,0.1,0.0
+Johnstone,GKP,4.2,1,0.1,0.1,0.1
+Krafth,DEF,4.3,0,0.0,0.0,0.1
+Mayers,DEF,4.0,2,0.1,0.1,0.0
+Olsen,GKP,4.5,4,0.1,0.1,0.0
+Sadi,MID,4.5,1,0.1,0.1,0.0
+Arthur,DEF,4.0,0,0.0,0.1,0.0
+Bayindir,GKP,4.3,0,0.0,0.0,0.1
+Bella-Kotchap,DEF,3.9,0,0.0,0.0,0.1
+Casadei,MID,4.4,1,0.1,0.0,0.0
+Casey,DEF,4.0,1,0.0,0.0,0.0
+Foderingham,GKP,4.3,0,0.0,0.1,0.0
+Hardy,DEF,4.0,2,0.1,0.0,0.0
+Holding,DEF,4.2,1,0.0,0.0,0.0
+Kabia,MID,4.5,0,0.0,0.0,0.1
+King,DEF,4.0,2,0.1,0.0,0.0
+Kporha,DEF,4.0,2,0.1,0.0,0.0
+Lankshear,FWD,4.5,1,0.1,0.0,0.0
+Lindelof,DEF,4.3,0,0.0,0.0,0.1
+McCarthy,GKP,4.3,0,0.0,0.0,0.1
+Meupiyou,DEF,3.9,0,0.0,0.0,0.1
+Nallo,DEF,4.0,0,0.0,0.0,0.1
+N. Neto,GKP,4.1,0,0.0,0.0,0.1
+Olusesi,MID,4.5,1,0.1,0.0,0.0
+Omobamidele,DEF,4.2,0,0.0,0.1,0.1
+Steele,GKP,4.1,1,0.1,0.1,0.0
+Targett,DEF,4.0,0,0.0,0.0,0.1
+Turner,GKP,3.9,0,0.0,0.0,0.1
+Valdimarsson,GKP,3.9,2,0.1,0.0,0.0
+D. Ward,GKP,3.9,0,0.0,0.1,0.1
+A.Fatawu,MID,5.2,0,0.0,0.0,0.0
+A.Murphy,DEF,4.0,1,0.0,0.0,0.0
+A.Phillips,DEF,4.0,0,0.0,0.0,0.0
+Aar�n Anselmino,DEF,0.0,0,0.0,0.0,0.0
+Aarons,DEF,4.3,0,0.0,0.0,0.0
+Abbott,DEF,4.0,0,0.0,0.0,0.0
+Adu-Adjei,FWD,4.5,0,0.0,0.0,0.0
+Agbinone,MID,4.5,0,0.0,0.0,0.0
+Ahamada,MID,4.5,0,0.0,0.0,0.0
+Alcaraz,MID,4.9,0,0.0,0.0,0.0
+Alves,MID,4.5,0,0.0,0.0,0.0
+Amass,DEF,4.0,0,0.0,0.0,0.0
+Amissah,DEF,4.0,0,0.0,0.0,0.0
+Amo-Ameyaw,MID,4.4,0,0.0,0.0,0.0
+Andrey Santos,MID,4.5,0,0.0,0.0,0.0
+Ângelo,MID,4.5,0,0.0,0.0,0.0
+Anthony,MID,4.5,0,0.0,0.0,0.0
+Antonio,FWD,5.3,0,0.0,0.0,0.0
+Austin,GKP,4.0,0,0.0,0.0,0.0
+B.Badiashile,DEF,4.3,0,0.0,0.0,0.0
+B.Traore,MID,4.8,0,0.0,0.0,0.0
+Baggott,DEF,4.0,0,0.0,0.0,0.0
+Bajcetic,MID,4.5,0,0.0,0.0,0.0
+Baker-Boaitey,MID,4.5,0,0.0,0.0,0.0
+Barco,DEF,4.0,0,0.0,0.0,0.0
+Barnes,MID,6.0,0,0.0,0.0,0.0
+Barrenechea,MID,4.9,0,0.0,0.0,0.0
+Bates,MID,4.5,0,0.0,0.0,0.0
+Bazunu,GKP,4.3,0,0.0,0.0,0.0
+Begovic,GKP,4.0,0,0.0,0.0,0.0
+Bentley,GKP,3.9,0,0.0,0.0,0.0
+Bergström,GKP,3.9,0,0.0,0.0,0.0
+Bettinelli,GKP,3.9,0,0.0,0.0,0.0
+Bowler,MID,4.5,0,0.0,0.0,0.0
+Brierley,MID,4.4,0,0.0,0.0,0.0
+Brits,GKP,4.0,0,0.0,0.0,0.0
+Broggio,MID,4.5,0,0.0,0.0,0.0
+Broja,FWD,5.4,0,0.0,0.0,0.0
+Bryan,MID,5.0,0,0.0,0.0,0.0
+C.Miguel,GKP,4.2,1,0.0,0.0,0.0
+Cahill,GKP,3.9,0,0.0,0.0,0.0
+Cannon,FWD,4.5,0,0.0,0.0,0.0
+Carson,GKP,4.0,0,0.0,0.0,0.0
+Cartwright,MID,4.5,0,0.0,0.0,0.0
+Charles,MID,4.5,0,0.0,0.0,0.0
+Chilwell,DEF,4.6,0,0.0,0.0,0.0
+Chiquinho,MID,4.5,0,0.0,0.0,0.0
+Chirewa,MID,4.5,0,0.0,0.0,0.0
+Chiwome,FWD,4.5,0,0.0,0.0,0.0
+Clark,MID,4.5,0,0.0,0.0,0.0
+Claudio Echeverri,MID,0.0,0,0.0,0.0,0.0
+Cozier-Duberry,MID,4.5,0,0.0,0.0,0.0
+D.D.Fofana,FWD,5.4,0,0.0,0.0,0.0
+Da Silva Moreira,MID,4.4,0,0.0,0.0,0.0
+Dahoud,MID,4.9,0,0.0,0.0,0.0
+Daniel Gore,MID,0.0,0,0.0,0.0,0.0
+Danns,FWD,4.5,0,0.0,0.0,0.0
+Dasilva,MID,4.8,0,0.0,0.0,0.0
+H. Davies,GKP,4.0,0,0.0,0.0,0.0
+Deivid,FWD,4.9,0,0.0,0.0,0.0
+Dendoncker,MID,4.5,0,0.0,0.0,0.0
+E. Dennis,FWD,4.9,0,0.0,0.0,0.0
+W. Dennis,GKP,4.0,0,0.0,0.0,0.0
+Devine,MID,4.5,0,0.0,0.0,0.0
+Diaby,MID,6.5,0,0.0,0.0,0.0
+Dixon,DEF,4.0,0,0.0,0.0,0.0
+Doak,MID,4.5,0,0.0,0.0,0.0
+Dobbin,MID,5.0,0,0.0,0.0,0.0
+Dorrington,DEF,4.0,0,0.0,0.0,0.0
+E.Royal,DEF,4.5,0,0.0,0.0,0.0
+Earthy,MID,4.5,0,0.0,0.0,0.0
+Ebiowei,MID,4.5,0,0.0,0.0,0.0
+Edmundson,DEF,4.0,0,0.0,0.0,0.0
+T. Edozie,MID,4.5,0,0.0,0.0,0.0
+S. Edozie,MID,4.9,0,0.0,0.0,0.0
+Edwards,DEF,3.9,0,0.0,0.0,0.0
+Ellery Balcombe,GKP,0.0,0,0.0,0.0,0.0
+Enes Ünal,FWD,5.4,0,0.0,0.0,0.0
+Evanilson,FWD,5.7,0,0.0,0.0,0.0
+F.Kadıoğlu,DEF,4.5,0,0.0,0.0,0.0
+Fábio Silva,FWD,5.0,0,0.0,0.0,0.0
+Fábio Vieira,MID,5.4,0,0.0,0.0,0.0
+Faivre,MID,5.0,0,0.0,0.0,0.0
+Fitzgerald,MID,4.5,0,0.0,0.0,0.0
+Fletcher,MID,4.5,0,0.0,0.0,0.0
+N. Fraser,FWD,4.5,0,0.0,0.0,0.0
+Füllkrug,FWD,6.7,0,0.0,0.0,0.0
+G.Jesus,FWD,6.7,0,0.0,0.0,0.0
+G.Nunes,MID,4.9,0,0.0,0.0,0.0
+Gallagher,MID,5.9,0,0.0,0.0,0.0
+Gauci,GKP,4.0,0,0.0,0.0,0.0
+George,MID,4.5,0,0.0,0.0,0.0
+Gilchrist,DEF,4.0,0,0.0,0.0,0.0
+Gilmour,MID,5.0,0,0.0,0.0,0.0
+Godo,MID,4.4,0,0.0,0.0,0.0
+Golding,MID,4.4,0,0.0,0.0,0.0
+Gonzalez,MID,4.4,0,0.0,0.0,0.0
+Gross,MID,6.5,0,0.0,0.0,0.0
+H.Bueno,DEF,4.5,0,0.0,0.0,0.0
+H.Traorè,MID,4.5,0,0.0,0.0,0.0
+Hannibal,MID,4.5,0,0.0,0.0,0.0
+Harness,MID,4.9,0,0.0,0.0,0.0
+L. Harris,MID,4.5,0,0.0,0.0,0.0
+Hayden,MID,4.4,0,0.0,0.0,0.0
+Heaton,GKP,3.9,0,0.0,0.0,0.0
+Heaven,DEF,4.0,0,0.0,0.0,0.0
+Hein,GKP,4.0,0,0.0,0.0,0.0
+Hennessey,GKP,4.0,0,0.0,0.0,0.0
+Hickey,DEF,4.3,0,0.0,0.0,0.0
+Hodge,MID,4.5,0,0.0,0.0,0.0
+Hoever,DEF,4.0,0,0.0,0.0,0.0
+Højbjerg,MID,5.0,0,0.0,0.0,0.0
+Holgate,DEF,4.0,0,0.0,0.0,0.0
+Humphreys,MID,4.5,0,0.0,0.0,0.0
+I.Osman,MID,5.0,0,0.0,0.0,0.0
+Igor,DEF,4.4,0,0.0,0.0,0.0
+Iling Jr,MID,5.4,0,0.0,0.0,0.0
+Iversen,GKP,3.9,0,0.0,0.0,0.0
+J.Alvarez,FWD,7.0,0,0.0,0.0,0.0
+J.Araujo,DEF,4.3,0,0.0,0.0,0.0
+Jack Porter,GKP,0.0,0,0.0,0.0,0.0
+Jaros,GKP,4.0,0,0.0,0.0,0.0
+Jimoh,MID,4.5,0,0.0,0.0,0.0
+João Cancelo,DEF,5.3,0,0.0,0.0,0.0
+Josh King,MID,0.0,0,0.0,0.0,0.0
+Kaboré,DEF,4.5,0,0.0,0.0,0.0
+Kacurri,DEF,4.0,0,0.0,0.0,0.0
+Kalajdžić,FWD,4.8,0,0.0,0.0,0.0
+Kayi Sanda,DEF,4.0,0,0.0,0.0,0.0
+Kellyman,MID,4.4,0,0.0,0.0,0.0
+Kesler-Hayden,DEF,4.0,0,0.0,0.0,0.0
+T. King,GKP,4.0,0,0.0,0.0,0.0
+Kozlowski,MID,4.5,0,0.0,0.0,0.0
+Kukonki,DEF,4.0,0,0.0,0.0,0.0
+Ladapo,FWD,4.5,0,0.0,0.0,0.0
+Larios,DEF,4.0,0,0.0,0.0,0.0
+Lascelles,DEF,4.5,0,0.0,0.0,0.0
+J. Lewis,DEF,4.0,0,0.0,0.0,0.0
+Lis,GKP,4.0,0,0.0,0.0,0.0
+Lo Celso,MID,4.9,0,0.0,0.0,0.0
+Lukaku,FWD,6.3,0,0.0,0.0,0.0
+Luke Plange,FWD,0.0,0,0.0,0.0,0.0
+Lumley,GKP,4.0,0,0.0,0.0,0.0
+M.França,MID,4.4,0,0.0,0.0,0.0
+M.Sarr,DEF,4.5,0,0.0,0.0,0.0
+Mara,FWD,5.0,0,0.0,0.0,0.0
+Marcal,MID,4.5,0,0.0,0.0,0.0
+Mark Gillespie,GKP,0.0,0,0.0,0.0,0.0
+Marschall,GKP,4.0,0,0.0,0.0,0.0
+Marsh,FWD,4.5,0,0.0,0.0,0.0
+Matthew Cox,GKP,0.0,0,0.0,0.0,0.0
+Matthews,GKP,3.9,0,0.0,0.0,0.0
+Maupay,FWD,4.9,0,0.0,0.0,0.0
+Mazilu,MID,4.5,0,0.0,0.0,0.0
+Mbabu,DEF,4.0,0,0.0,0.0,0.0
+McConnell,MID,4.4,0,0.0,0.0,0.0
+McConville,DEF,4.0,0,0.0,0.0,0.0
+McTominay,MID,4.9,0,0.0,0.0,0.0
+Meghoma,DEF,4.0,0,0.0,0.0,0.0
+Mepham,DEF,4.4,0,0.0,0.0,0.0
+Metcalfe,MID,4.5,0,0.0,0.0,0.0
+Mighten,MID,4.5,0,0.0,0.0,0.0
+Moran,MID,5.0,0,0.0,0.0,0.0
+Morton,MID,4.4,0,0.0,0.0,0.0
+Mosquera,DEF,3.9,0,0.0,0.0,0.0
+N.Aguerd,DEF,4.4,0,0.0,0.0,0.0
+N.Phillips,DEF,4.0,0,0.0,0.0,0.0
+Ndaba,DEF,4.0,0,0.0,0.0,0.0
+B. Nelson,DEF,4.0,0,0.0,0.0,0.0
+Nichols,DEF,4.0,0,0.0,0.0,0.0
+Nwaneri,MID,4.5,0,0.0,0.0,0.0
+Nyoni,MID,4.5,0,0.0,0.0,0.0
+O.Richards,DEF,4.5,0,0.0,0.0,0.0
+L. O'Brien,MID,5.0,0,0.0,0.0,0.0
+O'Brien-Whitmarsh,MID,4.5,0,0.0,0.0,0.0
+O'Mahony,FWD,4.5,0,0.0,0.0,0.0
+O’Reilly,MID,4.9,0,0.0,0.0,0.0
+Odobert,MID,5.3,0,0.0,0.0,0.0
+Offiah,DEF,4.0,0,0.0,0.0,0.0
+Ogbene,MID,4.8,0,0.0,0.0,0.0
+Okoduwa,DEF,4.0,0,0.0,0.0,0.0
+Onyeka,MID,4.9,0,0.0,0.0,0.0
+Oulad M'hand,MID,4.5,0,0.0,0.0,0.0
+Ozoh,MID,4.5,0,0.0,0.0,0.0
+Panzo,DEF,4.0,0,0.0,0.0,0.0
+Pau,DEF,4.2,0,0.0,0.0,0.0
+Paulsen,GKP,4.0,0,0.0,0.0,0.0
+Peart-Harris,MID,4.5,0,0.0,0.0,0.0
+Pellistri,MID,5.0,0,0.0,0.0,0.0
+Petrović,GKP,4.4,0,0.0,0.0,0.0
+Peupion,MID,4.4,0,0.0,0.0,0.0
+Philip,MID,4.8,0,0.0,0.0,0.0
+Pivas,DEF,4.0,0,0.0,0.0,0.0
+Podence,MID,5.5,0,0.0,0.0,0.0
+Pond,DEF,3.9,0,0.0,0.0,0.0
+R.Williams,DEF,4.0,0,0.0,0.0,0.0
+Rak-Sakyi,MID,4.5,0,0.0,0.0,0.0
+Ream,DEF,4.5,0,0.0,0.0,0.0
+Rees-Dottin,FWD,4.5,0,0.0,0.0,0.0
+Ricardo,DEF,4.1,0,0.0,0.0,0.0
+Rodney,MID,4.5,0,0.0,0.0,0.0
+Rodrigo,MID,6.2,0,0.0,0.0,0.0
+Ruddy,GKP,4.0,0,0.0,0.0,0.0
+Rushworth,GKP,4.0,0,0.0,0.0,0.0
+Saka,MID,10.2,0,0.0,0.0,0.0
+Samuels,DEF,4.0,0,0.0,0.0,0.0
+Sarmiento,MID,4.9,0,0.0,0.0,0.0
+Scarlett,FWD,4.5,0,0.0,0.0,0.0
+Senesi,DEF,4.6,0,0.0,0.0,0.0
+Setford,GKP,4.5,0,0.0,0.0,0.0
+Sherif,FWD,4.5,0,0.0,0.0,0.0
+Sinisalo,GKP,4.0,0,0.0,0.0,0.0
+Slater,DEF,4.0,0,0.0,0.0,0.0
+Slicker,GKP,3.9,0,0.0,0.0,0.0
+Solomon,MID,5.4,0,0.0,0.0,0.0
+Sousa,DEF,4.0,0,0.0,0.0,0.0
+Souttar,DEF,4.0,0,0.0,0.0,0.0
+Stansfield,FWD,5.0,0,0.0,0.0,0.0
+Swinkels,DEF,4.0,0,0.0,0.0,0.0
+Tete,DEF,4.4,0,0.0,0.0,0.0
+Tomiyasu,DEF,4.8,0,0.0,0.0,0.0
+Toney,FWD,7.3,0,0.0,0.0,0.0
+Trevitt,MID,4.4,0,0.0,0.0,0.0
+Udogie,DEF,4.8,0,0.0,0.0,0.0
+Ui-jo,FWD,4.5,0,0.0,0.0,0.0
+Umeh-Chibueze,MID,4.4,0,0.0,0.0,0.0
+Undav,FWD,5.5,0,0.0,0.0,0.0
+Veliz,FWD,5.0,0,0.0,0.0,0.0
+Vicario,GKP,4.8,0,0.0,0.0,0.0
+W.Fofana,DEF,4.4,0,0.0,0.0,0.0
+Walker,DEF,5.1,0,0.0,0.0,0.0
+Welington,DEF,4.0,0,0.0,0.0,0.0
+Werner,MID,6.2,0,0.0,0.0,0.0
+Wheatley,FWD,4.5,0,0.0,0.0,0.0
+J. White,MID,4.5,0,0.0,0.0,0.0
+Whiteman,GKP,4.0,0,0.0,0.0,0.0
+Wiley,DEF,4.0,0,0.0,0.0,0.0
+Williams-Barnett,MID,4.5,0,0.0,0.0,0.0
+C. Wilson,FWD,6.9,0,0.0,0.0,0.0
+Wilson-Brown,DEF,4.0,0,0.0,0.0,0.0
+Worrall,DEF,4.5,0,0.0,0.0,0.0
+Wright,MID,4.5,0,0.0,0.0,0.0
+Y. Chermiti,FWD,4.9,0,0.0,0.0,0.0
+Yang,MID,4.5,0,0.0,0.0,0.0
+Yogane,MID,4.5,0,0.0,0.0,0.0
+K. Young,MID,4.5,0,0.0,0.0,0.0
+Zanka,DEF,4.5,0,0.0,0.0,0.0
+Zouma,DEF,4.4,0,0.0,0.0,0.0
+Zych,GKP,4.0,0,0.0,0.0,0.0

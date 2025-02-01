@@ -154,7 +154,7 @@ class MILPActualsOptimiser:
             self.prob += pulp.lpSum([self.x_outfield[idx][t] + self.x_bench[idx][t] for idx in self.position_groups["DEF"][t]]) == 5, f"DefendersLineupHardConstraint_GW{t}"
             self.prob += pulp.lpSum([self.x_outfield[idx][t] + self.x_bench[idx][t] for idx in self.position_groups["MID"][t]]) == 5, f"MidfieldersLineupHardConstraint_GW{t}"
             self.prob += pulp.lpSum([self.x_outfield[idx][t] + self.x_bench[idx][t] for idx in self.position_groups["FWD"][t]]) == 3, f"ForwardsLineupHardConstraint_GW{t}"   
-            self.prob += pulp.lpSum([self.estimated_costs_by_gw[t][idx] * self.x_bench[idx][t] for idx in self.position_groups["GKP"][t]]) <= 4.0, f"BenchGK_CostLT4M_GW{t}"
+            #self.prob += pulp.lpSum([self.estimated_costs_by_gw[t][idx] * self.x_bench[idx][t] for idx in self.position_groups["GKP"][t]]) <= 4.0, f"BenchGK_CostLT4M_GW{t}"
 
         # Transfer constraints: At most one transfer in and out per gameweek
         for t in range(self.start_t + 1, self.end_t):
@@ -205,7 +205,7 @@ class MILPActualsOptimiser:
             solution_df.rename(columns={f"position_gw{t}": "position", f"team_gw{t}": "team", 
                                        f"prob_injury_gw{t}": "prob_injury", f"ep_gw{t}":"xPts",
                                        f"ep_cost_gw{t}": "player_cost", f"xmins_gw{t}":"xMins"}, inplace=True)
-            results_df = pd.concat([results_df, solution_df], axis=0)
+            results_df = pd.concat([results_df, solution_df], axis=0, ignore_index=True)
 
             # Do not print validation report for first period if the solver is run with an existing team.
             if self.validation and not(self.use_existing_team and t == self.start_t):
@@ -256,7 +256,7 @@ class MILPActualsOptimiser:
         self.add_constraints()  # Add objective function and constraint terms to the linear programming problem.
 
         # Solve the LP problem.
-        self.prob.solve(pulp.PULP_CBC_CMD(msg=False))
+        self.prob.solve(pulp.PULP_CBC_CMD(msg=False, gapRel=0.03))
         
         # Extract results.
         self.extract_results()
