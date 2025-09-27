@@ -87,14 +87,14 @@ The optimiser uses a configuration file, create a copy of the distributed YAML f
 
 Make sure this file is correctly configured according to your needs:
 ```bash
-season: "2024/2025"  # Update the season
+season: "2025/2026"  # Update the season
 
 fpl_api_base_url: "https://fantasy.premierleague.com/api"  # Base URL for FPL API
 
 FPL_TEAM_ID: 1234567  # Update to your FPL team ID
 
 # Authentication cookie for accessing the FPL API.
-fpl_api_cookie_auth: |-
+fpl_api_cookie_auth: >+
   "Your authentication cookie"  # Update with your cookie
 ```
 
@@ -125,6 +125,7 @@ import pandas as pd
 
 GAMEWEEK = 7  # Define starting gameweek for projection.
 FIRST_RUN = False # Data is extracted directly from the FPL API for the first run otherwise the extracted data is read from within the repository. 
+EXISTING_TEAM = True  # Specify whether optimisation is performed assuming an existing team or not.
 
 # 1). Fetch required data from official FPL API.
 api_data = FplAPIData()
@@ -150,7 +151,7 @@ The optimiser can be defined by supplying player gameweek points projection data
 gw_optimiser = MILPOptimiser(gw_df,  # Player gameweek projection Pandas DataFrame.
                              start_gameweek = GAMEWEEK,   # Starting point for gameweek projection.
                              gameweeks = 3,  # Must be aligned to the number of gameweek projection 
-                             use_existing_team = EXISTING_TEAM,  # Specify whether optimisation is performed assuming an existing team or not.
+                             use_existing_team = EXISTING_TEAM,
                              )
 
 # Perform optimisation.
@@ -162,105 +163,146 @@ gw_optimiser.calulate_optimal_team()
 The optimiser will output the optimal team selection by default and present each player selection and their expected points by gameweek. Decisions regarding formation, transfers, captaincy and starting 11 vs. bench selection are also displayed. This output can be accessed using the results_df attribute of the optimiser object, this can then be saved as a CSV file for further analysis.
 
 Here is example report that is displayed to the console:
-```Calculating a 3-gameweek forecast, starting from GW: 23...
-Gameweek 23:
+```
+Calculating a 4-gameweek forecast, starting from GW: 6...
+Gameweek 6:
 Optimal team:
-      id        name position team  prob_injury  starts  starts_perc  selected_by_percent  xMins  player_cost  gameweek  xPts position_type  captain  vice_captain
-30   443        Sels      GKP  NOT          0.0      22     0.578947                 17.8     94          5.0        23   3.4      Outfield    False         False
-9    399        Hall      DEF  NEW          0.0      19     0.500000                 26.7     83          5.1        23   3.8      Outfield    False         False
-44   339      Virgil      DEF  LIV          0.0      21     0.552632                 22.7     91          6.4        23   4.9      Outfield    False         False
-49   255    Robinson      DEF  FUL          0.0      22     0.578947                 26.6     89          5.1        23   3.3      Outfield    False         False
-3    328     M.Salah      MID  LIV          0.0      21     0.552632                 70.7     89         13.7        23   9.6      Outfield     True         False
-4    398      Gordon      MID  NEW          0.0      20     0.526316                 26.1     85          7.7        23   5.2      Outfield    False         False
-7     71    Kluivert      MID  BOU          0.0      17     0.447368                  8.0     84          5.6        23   5.3      Outfield    False         False
-10   182      Palmer      MID  CHE          0.0      22     0.578947                 66.1     88         11.3        23   4.7      Outfield    False         False
-1    401        Isak      FWD  NEW          0.0      20     0.526316                 59.8     88          9.5        23   6.5      Outfield    False          True
-29   252        Raúl      FWD  FUL          0.0      17     0.447368                 11.7     74          5.7        23   4.5      Outfield    False         False
-41   129  João Pedro      FWD  BRI          0.0      14     0.368421                 15.0     79          5.6        23   4.7      Outfield    False         False
-263  521   Fabianski      GKP  WHM          0.0      12     0.315789                 16.8     87          4.1        23   3.0         Bench    False         False
-32   422        Aina      DEF  NOT          0.0      22     0.578947                 29.3     89          5.4        23   2.5         Bench    False         False
-50   573  Milenković      DEF  NOT          0.0      21     0.552632                  8.7     88          4.8        23   2.2         Bench    False         False
-8    364        Amad      MID  MUN          0.0      15     0.394737                 23.5     85          5.6        23   3.8         Bench    False         False
-
-Formation: 3,4,3
-Total team cost: 100.6
-   (o/w Outfield): 80.7
-   (o/w Bench): 19.9
-Total expected points (excl. Captain): 55.900000000000006
-Total expected points (incl. Captain): 65.5
-Captain: M.Salah
-Vice-Captain: Isak
-Transfered out: B.Fernandes
-Transferred in: Kluivert
-Players benched: Aina, Amad, Milenković
-Players promoted: João Pedro, Robinson, Virgil
-
-Gameweek 24:
-Optimal team:
-      id              name position team  prob_injury  starts  starts_perc  selected_by_percent  xMins  player_cost  gameweek  xPts position_type  captain  vice_captain
-30   443              Sels      GKP  NOT          0.0      22     0.578947                 17.8     94          4.9        24   3.4      Outfield    False         False
-5    311  Alexander-Arnold      DEF  LIV          0.0      19     0.500000                 30.6     77          7.1        24   8.3      Outfield    False          True
-9    399              Hall      DEF  NEW          0.0      19     0.500000                 26.7     83          5.0        24   3.4      Outfield    False         False
-44   339            Virgil      DEF  LIV          0.0      21     0.552632                 22.7     91          6.2        24   7.1      Outfield    False         False
-3    328           M.Salah      MID  LIV          0.0      21     0.552632                 70.7     89         13.4        24  12.8      Outfield     True         False
-4    398            Gordon      MID  NEW          0.0      20     0.526316                 26.1     85          7.5        24   4.8      Outfield    False         False
-7     71          Kluivert      MID  BOU          0.0      17     0.447368                  8.0     84          5.4        24   3.7      Outfield    False         False
-8    364              Amad      MID  MUN          0.0      15     0.394737                 23.5     85          5.5        24   4.4      Outfield    False         False
-10   182            Palmer      MID  CHE          0.0      22     0.578947                 66.1     88         11.1        24   6.9      Outfield    False         False
-1    401              Isak      FWD  NEW          0.0      20     0.526316                 59.8     88          9.3        24   5.9      Outfield    False         False
-41   129        João Pedro      FWD  BRI          0.0      14     0.368421                 15.0     79          5.4        24   3.7      Outfield    False         False
-263  521         Fabianski      GKP  WHM          0.0      12     0.315789                 16.8     87          4.0        24   2.9         Bench    False         False
-32   422              Aina      DEF  NOT          0.0      22     0.578947                 29.3     89          5.3        24   3.2         Bench    False         False
-49   255          Robinson      DEF  FUL          0.0      22     0.578947                 26.6     89          5.0        24   2.2         Bench    False         False
-29   252              Raúl      FWD  FUL          0.0      17     0.447368                 11.7     74          5.5        24   3.5         Bench    False         False
+      id         name position team  prob_injury  starts  starts_perc  selected_by_percent  xMins  player_cost  gameweek  xPts position_type  captain  vice_captain
+119   67     Petrović      GKP  BOU         0.00       5     0.131579                  5.5     93          4.5         6   3.7      Outfield    False         False
+124   72       Senesi      DEF  BOU         0.00       5     0.131579                 17.9     90          4.8         6   4.2      Outfield    False         False
+414  373       Virgil      DEF  LIV         0.00       5     0.131579                 29.8     89          6.1         6   4.2      Outfield    False         False
+559  508   N.Williams      DEF  NOT         0.00       5     0.131579                  6.2     88          4.9         6   4.7      Outfield    False         False
+134   82      Semenyo      MID  BOU         0.00       5     0.131579                 50.9     88          7.7         6   4.8      Outfield    False         False
+322  299       Ndiaye      MID  EVE         0.00       5     0.131579                 11.2     73          6.5         6   4.9      Outfield    False         False
+458  414        Foden      MID  MCI         0.00       2     0.052632                  5.8     73          8.1         6   5.5      Outfield    False          True
+469  427    Reijnders      MID  MCI         0.00       5     0.131579                 34.3     82          5.7         6   4.8      Outfield    False         False
+495  449  B.Fernandes      MID  MUN         0.00       5     0.131579                 21.1     87          9.0         6   5.1      Outfield    False         False
+31   666     Gyökeres      FWD  ARS         0.00       5     0.131579                 25.4     81          9.0         6   4.7      Outfield    False         False
+472  430      Haaland      FWD  MCI         0.00       5     0.131579                 48.9     84         14.3         6   7.3      Outfield     True         False
+114  470     Dúbravka      GKP  BUR         0.00       5     0.131579                 34.4     93          4.0         6   2.8         Bench    False         False
+39    36         Cash      DEF  AST         0.00       5     0.131579                  5.3     79          4.6         6   3.7         Bench    False         False
+487  441        Dorgu      DEF  MUN         0.00       4     0.105263                  5.2     85          4.5         6   3.4         Bench    False         False
+269  252    Marc Guiu      FWD  CHE         0.25       0     0.000000                  8.6      6          4.3         6   0.5         Bench    False         False
 
 Formation: 3,5,2
-Total team cost: 100.6
-   (o/w Outfield): 80.8
-   (o/w Bench): 19.8
-Total expected points (excl. Captain): 64.4
-Total expected points (incl. Captain): 77.20000000000002
-Captain: M.Salah
-Vice-Captain: Alexander-Arnold
-Transfered out: Milenković
-Transferred in: Alexander-Arnold
-Players benched: Raúl, Robinson
-Players promoted: Amad
+Total budget: 100.0
+ o/w Funds in bank: 2.0
+ o/w Team cost: 98.0
+   o/w Outfield: 80.6
+   o/w Bench: 17.4
+Total expected points (excl. Captain): 53.9
+Total expected points (incl. Captain): 61.2
+Captain: Haaland
+Vice-Captain: Foden
+Transfered out: N/A
+Transferred in: N/A
+Players benched: N/A
+Players promoted: N/A
 
-Gameweek 25:
+Gameweek 7:
 Optimal team:
-      id              name position team  prob_injury  starts  starts_perc  selected_by_percent  xMins  player_cost  gameweek  xPts position_type  captain  vice_captain
-30   443              Sels      GKP  NOT          0.0      22     0.578947                 17.8     94          4.8        25   3.3      Outfield    False         False
-5    311  Alexander-Arnold      DEF  LIV          0.0      19     0.500000                 30.6     77          6.9        25   5.1      Outfield    False         False
-44   339            Virgil      DEF  LIV          0.0      21     0.552632                 22.7     91          6.0        25   4.2      Outfield    False         False
-49   255          Robinson      DEF  FUL          0.0      22     0.578947                 26.6     89          4.9        25   3.7      Outfield    False         False
-3    328           M.Salah      MID  LIV          0.0      21     0.552632                 70.7     89         13.1        25   7.9      Outfield     True         False
-7     71          Kluivert      MID  BOU          0.0      17     0.447368                  8.0     84          5.2        25   4.8      Outfield    False         False
-10   182            Palmer      MID  CHE          0.0      22     0.578947                 66.1     88         10.9        25   5.0      Outfield    False         False
-110  503               Son      MID  TOT          0.0      17     0.447368                  5.1     83          9.4        25   6.4      Outfield    False          True
-1    401              Isak      FWD  NEW          0.0      20     0.526316                 59.8     88          9.1        25   4.0      Outfield    False         False
-29   252              Raúl      FWD  FUL          0.0      17     0.447368                 11.7     74          5.3        25   5.0      Outfield    False         False
-41   129        João Pedro      FWD  BRI          0.0      14     0.368421                 15.0     79          5.2        25   3.5      Outfield    False         False
-263  521         Fabianski      GKP  WHM          0.0      12     0.315789                 16.8     87          3.9        25   3.2         Bench    False         False
-9    399              Hall      DEF  NEW          0.0      19     0.500000                 26.7     83          4.9        25   1.9         Bench    False         False
-32   422              Aina      DEF  NOT          0.0      22     0.578947                 29.3     89          5.2        25   2.6         Bench    False         False
-8    364              Amad      MID  MUN          0.0      15     0.394737                 23.5     85          5.4        25   3.5         Bench    False         False
+      id         name position team  prob_injury  starts  starts_perc  selected_by_percent  xMins  player_cost  gameweek  xPts position_type  captain  vice_captain
+119   67     Petrović      GKP  BOU         0.00       5     0.131579                  5.5     91          4.4         7   3.7      Outfield    False         False
+39    36         Cash      DEF  AST         0.00       5     0.131579                  5.3     81          4.5         7   4.2      Outfield    False         False
+124   72       Senesi      DEF  BOU         0.00       5     0.131579                 17.9     88          4.7         7   4.3      Outfield    False         False
+414  373       Virgil      DEF  LIV         0.00       5     0.131579                 29.8     88          6.0         7   3.8      Outfield    False         False
+487  441        Dorgu      DEF  MUN         0.00       4     0.105263                  5.2     78          4.5         7   4.6      Outfield    False         False
+14    16         Saka      MID  ARS         0.00       2     0.052632                  4.9     81          9.8         7   5.9      Outfield    False         False
+134   82      Semenyo      MID  BOU         0.00       5     0.131579                 50.9     83          7.6         7   4.9      Outfield    False         False
+322  299       Ndiaye      MID  EVE         0.00       5     0.131579                 11.2     76          6.4         7   4.4      Outfield    False         False
+495  449  B.Fernandes      MID  MUN         0.00       5     0.131579                 21.1     88          8.9         7   6.5      Outfield     True         False
+31   666     Gyökeres      FWD  ARS         0.00       5     0.131579                 25.4     81          8.9         7   6.5      Outfield    False          True
+472  430      Haaland      FWD  MCI         0.00       5     0.131579                 48.9     86         14.1         7   5.9      Outfield    False         False
+114  470     Dúbravka      GKP  BUR         0.00       5     0.131579                 34.4     91          3.9         7   3.0         Bench    False         False
+559  508   N.Williams      DEF  NOT         0.00       5     0.131579                  6.2     85          4.8         7   2.9         Bench    False         False
+469  427    Reijnders      MID  MCI         0.00       5     0.131579                 34.3     81          5.6         7   3.9         Bench    False         False
+269  252    Marc Guiu      FWD  CHE         0.25       0     0.000000                  8.6     13          4.3         7   0.9         Bench    False         False
 
-Formation: 3,4,3
-Total team cost: 100.20000000000002
-   (o/w Outfield): 80.8
-   (o/w Bench): 19.4
-Total expected points (excl. Captain): 52.9
-Total expected points (incl. Captain): 60.8
-Captain: M.Salah
-Vice-Captain: Son
-Transfered out: Gordon
-Transferred in: Son
-Players benched: Hall, Amad
-Players promoted: Raúl, Robinson
+Formation: 4,4,2
+Total budget: 98.6
+ o/w Funds in bank: 0.2
+ o/w Team cost: 98.4
+   o/w Outfield: 79.8
+   o/w Bench: 18.6
+Total expected points (excl. Captain): 54.7
+Total expected points (incl. Captain): 61.2
+Captain: B.Fernandes
+Vice-Captain: Gyökeres
+Transfered out: Foden
+Transferred in: Saka
+Players benched: N.Williams, Reijnders
+Players promoted: Dorgu, Cash
+
+Gameweek 8:
+Optimal team:
+      id         name position team  prob_injury  starts  starts_perc  selected_by_percent  xMins  player_cost  gameweek  xPts position_type  captain  vice_captain
+114  470     Dúbravka      GKP  BUR         0.00       5     0.131579                 34.4     92          3.9         8   3.6      Outfield    False         False
+85   191       Estève      DEF  BUR         0.00       5     0.131579                 15.0     89          4.0         8   3.8      Outfield    False         False
+124   72       Senesi      DEF  BOU         0.00       5     0.131579                 17.9     84          4.6         8   3.5      Outfield    False         False
+414  373       Virgil      DEF  LIV         0.00       5     0.131579                 29.8     83          5.9         8   4.1      Outfield    False         False
+14    16         Saka      MID  ARS         0.00       2     0.052632                  4.9     83          9.7         8   4.7      Outfield    False          True
+134   82      Semenyo      MID  BOU         0.00       5     0.131579                 50.9     80          7.5         8   3.9      Outfield    False         False
+322  299       Ndiaye      MID  EVE         0.00       5     0.131579                 11.2     80          6.3         8   3.6      Outfield    False         False
+469  427    Reijnders      MID  MCI         0.00       5     0.131579                 34.3     75          5.5         8   3.9      Outfield    False         False
+495  449  B.Fernandes      MID  MUN         0.00       5     0.131579                 21.1     86          8.8         8   4.1      Outfield    False         False
+31   666     Gyökeres      FWD  ARS         0.00       5     0.131579                 25.4     71          8.8         8   4.4      Outfield    False         False
+472  430      Haaland      FWD  MCI         0.00       5     0.131579                 48.9     80         13.9         8   5.9      Outfield     True         False
+119   67     Petrović      GKP  BOU         0.00       5     0.131579                  5.5     92          4.3         8   3.3         Bench    False         False
+39    36         Cash      DEF  AST         0.00       5     0.131579                  5.3     80          4.4         8   2.8         Bench    False         False
+487  441        Dorgu      DEF  MUN         0.00       4     0.105263                  5.2     68          4.4         8   1.9         Bench    False         False
+269  252    Marc Guiu      FWD  CHE         0.25       0     0.000000                  8.6      6          4.3         8   0.5         Bench    False         False
+
+Formation: 3,5,2
+Total budget: 97.2
+ o/w Funds in bank: 0.9
+ o/w Team cost: 96.3
+   o/w Outfield: 78.9
+   o/w Bench: 17.4
+Total expected points (excl. Captain): 45.5
+Total expected points (incl. Captain): 51.4
+Captain: Haaland
+Vice-Captain: Saka
+Transfered out: N.Williams
+Transferred in: Estève
+Players benched: Dorgu, Cash, Petrović
+Players promoted: Dúbravka, Reijnders
+
+Gameweek 9:
+Optimal team:
+      id         name position team  prob_injury  starts  starts_perc  selected_by_percent  xMins  player_cost  gameweek  xPts position_type  captain  vice_captain
+119   67     Petrović      GKP  BOU         0.00       5     0.131579                  5.5     92          4.2         9   3.7      Outfield    False         False
+85   191       Estève      DEF  BUR         0.00       5     0.131579                 15.0     85          4.0         9   3.5      Outfield    False         False
+124   72       Senesi      DEF  BOU         0.00       5     0.131579                 17.9     81          4.5         9   4.0      Outfield    False         False
+414  373       Virgil      DEF  LIV         0.00       5     0.131579                 29.8     82          5.8         9   4.0      Outfield    False         False
+134   82      Semenyo      MID  BOU         0.00       5     0.131579                 50.9     76          7.4         9   4.7      Outfield    False         False
+253  235       Palmer      MID  CHE         1.00       2     0.052632                 15.2     70         10.5         9   6.0      Outfield     True         False
+322  299       Ndiaye      MID  EVE         0.00       5     0.131579                 11.2     69          6.2         9   4.0      Outfield    False         False
+469  427    Reijnders      MID  MCI         0.00       5     0.131579                 34.3     75          5.4         9   3.4      Outfield    False         False
+495  449  B.Fernandes      MID  MUN         0.00       5     0.131579                 21.1     86          8.7         9   5.3      Outfield    False          True
+31   666     Gyökeres      FWD  ARS         0.00       5     0.131579                 25.4     64          8.7         9   4.5      Outfield    False         False
+472  430      Haaland      FWD  MCI         0.00       5     0.131579                 48.9     77         13.7         9   4.9      Outfield    False         False
+114  470     Dúbravka      GKP  BUR         0.00       5     0.131579                 34.4     91          3.8         9   3.3         Bench    False         False
+39    36         Cash      DEF  AST         0.00       5     0.131579                  5.3     75          4.3         9   2.6         Bench    False         False
+487  441        Dorgu      DEF  MUN         0.00       4     0.105263                  5.2     67          4.3         9   2.9         Bench    False         False
+269  252    Marc Guiu      FWD  CHE         0.25       0     0.000000                  8.6     10          4.3         9   0.9         Bench    False         False
+
+Formation: 3,5,2
+Total budget: 95.8
+ o/w Funds in bank: 0.0
+ o/w Team cost: 95.8
+   o/w Outfield: 79.1
+   o/w Bench: 16.7
+Total expected points (excl. Captain): 48.0
+Total expected points (incl. Captain): 54.0
+Captain: Palmer
+Vice-Captain: B.Fernandes
+Transfered out: Saka
+Transferred in: Palmer
+Players benched: Dúbravka
+Players promoted: Petrović
 
 Optimisation process complete!
-Time taken: 9.59 seconds
+Time taken: 83.07 seconds
 ```
 ## Contributing
 
