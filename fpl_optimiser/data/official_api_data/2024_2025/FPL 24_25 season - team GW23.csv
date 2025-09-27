@@ -10,7 +10,7 @@ element,position,multiplier,is_captain,is_vice_captain,element_type
 54,9,1,False,False,3
 252,10,1,False,False,4
 401,11,1,False,True,4
-521,12,1,False,False,1
-399,13,1,False,False,2
-129,14,1,False,False,4
-70,15,1,False,False,2
+521,12,0,False,False,1
+399,13,0,False,False,2
+129,14,0,False,False,4
+70,15,0,False,False,2

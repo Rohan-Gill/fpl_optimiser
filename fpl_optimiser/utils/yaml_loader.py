@@ -5,6 +5,9 @@ from .constants import CONFIG_DIR
 
 class YAMLFile:
     """
+    Defines an abstract class representing a YAML file.
+    A YAMLFile object is created by specifying a filepath to the YAML file. 
+    If a filepath is not provided then the config/config.YAML file is opened by default.
     """
 
     def __init__(self, yaml_filepath: Optional[str] = None) -> None:
@@ -17,6 +20,8 @@ class YAMLFile:
     
     def open_yaml_file(self, yaml_filepath: str) -> dict:
         """
+        Opens a YAML file specified by yaml_filepath.
+        Returns the contents on the YAML file as a dict object.
         """
         
         # Check if YAML file exists.
