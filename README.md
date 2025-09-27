@@ -16,14 +16,14 @@
 
 ## Overview
 
-**FPL Optimiser** is a Python tool designed to assist managers in making data-driven decisions reagrding optimal team selection in the [Fantasy Premier League (FPL)](https://fantasy.premierleague.com/) football game. The optimiser formulates and solves an [**integer linear programming** (ILP)](https://en.wikipedia.org/wiki/Integer_programming) problem, where forecasted points over a specified gameweek interval are maximised subject to a set of constraints based on FPL game rules. These constraints include player positions, budget limits, and team selection rules, all of which are critical to ensuring the team's validity in the game. 
+**FPL Optimiser** is a Python tool designed to assist managers in making data-driven decisions regarding optimal team selection in the [Fantasy Premier League (FPL)](https://fantasy.premierleague.com/) football game. The optimiser formulates and solves an [**integer linear programming** (ILP)](https://en.wikipedia.org/wiki/Integer_programming) problem, where forecasted points over a specified gameweek interval are maximised subject to a set of constraints based on FPL game rules. These constraints include player positions, budget limits, and team selection rules, all of which are critical to ensuring the team's validity in the game. 
 
-This tool not only enables the optimisation of team selection for upcoming gameweeks using forecast data but also provides the ability to calculate optimal team selections for historic gameweeks using actual data observed in previous gameweeks. The combination of forecast-based and actual data-driven optimisation makes FPL Optimiser a versatile tool for FPL managers aiming for the best possible team composition.
+This tool enables the optimisation of team selection for upcoming gameweeks using forecast data and also provides the ability to calculate optimal team selections for historic gameweeks using actual data observed in previous gameweeks. The combination of forecast-based and actual data-driven optimisation makes FPL Optimiser a versatile tool for FPL managers aiming for the best possible team composition.
 
 ## Key Features
 
 - **Multi-Gameweek Optimisation**: Supports optimisation over multiple gameweeks to account for longer-term planning and strategy.
-- **Real-Time Calculation**: Performs efficient calculations to deliver an optimal team selection in real time, providing users with actionable insights immediately.
+- **Real-Time Calculation**: Performs efficient calculations to deliver optimal team selection in real time, providing users with actionable insights immediately.
 - **Use of Existing Team**: Users can specify an existing team as a starting point for the optimisation process, allowing them to forecast and optimize their current squad rather than starting from scratch.
 - **Transfer Support**: The optimiser incorporates the simulation of transfers for team optimisation, allowing users to make decisions regarding player acquisitions and removals.
 - **User-Friendly Integration**: Designed for both technical users and FPL enthusiasts with an easy-to-understand input/output structure for efficient usage.
@@ -106,7 +106,7 @@ The optimiser requires player gameweek points projection data. This can be input
 - **`data/official_api_data/`**
 - **`data/actuals/`**
 
-Ensure that the appropriate data files are present in these directories before running the optimiser. If using your own data, ensure the format and structure of the data is aligned to that obtained in section 3 (see below).
+Ensure that the appropriate data files are present in these directories before running the optimiser. If you are using your own data, ensure the format and structure of the data is aligned to that obtained in section 3 (see below).
 
 ### 3. Running the optimiser
 

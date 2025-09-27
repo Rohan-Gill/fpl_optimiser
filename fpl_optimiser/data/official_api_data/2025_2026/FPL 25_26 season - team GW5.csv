@@ -1,0 +1,16 @@
+element,position,multiplier,is_captain,is_vice_captain,element_type,name,value
+502,1,1,False,False,1,Sels,5.0
+568,2,1,False,False,2,Pedro Porro,5.6
+347,3,1,False,False,2,Gudmundsson,4.0
+191,4,1,False,False,2,Estève,4.0
+441,5,1,False,False,2,Dorgu,4.5
+82,6,1,False,False,3,Semenyo,7.7
+449,7,1,False,True,3,B.Fernandes,9.0
+381,8,2,True,False,3,M.Salah,14.5
+384,9,1,False,False,3,Gakpo,7.6
+283,10,1,False,False,4,Mateta,7.6
+249,11,1,False,False,4,João Pedro,7.8
+470,12,0,False,False,1,Dúbravka,4.0
+427,13,0,False,False,3,Reijnders,5.7
+506,14,0,False,False,2,Murillo,5.4
+100,15,0,False,False,4,Kroupi.Jr,4.5
