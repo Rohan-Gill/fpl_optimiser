@@ -167,6 +167,7 @@ class MILPOptimiser:
         }
 
         self.pts_by_gw = {}
+        self.pts_by_gw_without_time_decay = {}
         self.mins_by_gw = {}
         for t in range(self.start_gameweek, self.end_t):
             # Expected points by gameweek with time decay applied.
@@ -174,6 +175,14 @@ class MILPOptimiser:
                 zip(
                     self.indices,
                     list(np.array(self.df[f"xpts_gw{t}"]) * (time_decay ** (t - 1)))
+                    )
+            )
+
+            # Need points by gw without time decay for player cost function.
+            self.pts_by_gw_without_time_decay[t] = dict(
+                zip(
+                    self.indices,
+                    list(np.array(self.df[f"xpts_gw{t}"]))
                     )
             )
 
@@ -219,7 +228,7 @@ class MILPOptimiser:
                     costs_by_gw[t][i] = self.df.at[i, "now_cost"]
                 else:
                     # Apply Sigmoid function to shift in pts_by_gw (vs. start GW).
-                    score_diff = self.pts_by_gw[t][i] - self.baseline_pts_by_gw[i]
+                    score_diff = self.pts_by_gw_without_time_decay[t][i] - self.baseline_pts_by_gw[i]
                     cost_func = self.sigmoid(score_diff, k=self.k)
 
                     # Scale Sigmoid output by max price change observed historically.

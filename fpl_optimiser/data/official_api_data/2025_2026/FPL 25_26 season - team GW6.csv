@@ -1,0 +1,16 @@
+element,position,multiplier,is_captain,is_vice_captain,element_type,name,value
+67,1,1,False,False,1,Petrović,4.5
+72,2,1,False,False,2,Senesi,4.9
+373,3,1,False,False,2,Virgil,6.1
+508,4,1,False,False,2,N.Williams,4.9
+427,5,1,False,False,3,Reijnders,5.8
+82,6,1,False,False,3,Semenyo,7.8
+449,7,1,False,True,3,B.Fernandes,9.0
+299,8,1,False,False,3,Ndiaye,6.5
+582,9,1,False,False,3,Kudus,6.7
+430,10,2,True,False,4,Haaland,14.4
+666,11,1,False,False,4,Gyökeres,9.0
+470,12,0,False,False,1,Dúbravka,4.0
+441,13,0,False,False,2,Dorgu,4.5
+36,14,0,False,False,2,Cash,4.6
+252,15,0,False,False,4,Marc Guiu,4.3
